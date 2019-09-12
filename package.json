@@ -1,25 +1,44 @@
 {
   "name": "project3",
-  "version": "1.0.0",
-  "description": "",
-  "main": "App.js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.23.2",
+    "d3": "^5.12.0",
+    "material-kit-react": "^1.8.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "github:reduxjs/redux-thunk"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xGabe973/Project3.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "App.js",
+  "devDependencies": {},
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/xGabe973/Project3/issues"
-  },
-  "homepage": "https://github.com/xGabe973/Project3#readme",
-  "dependencies": {
-    "flwww": "^2.0.12",
-    "react-router-dom": "^5.0.1"
-  },
-  "devDependencies": {}
+  "license": "ISC"
 }
