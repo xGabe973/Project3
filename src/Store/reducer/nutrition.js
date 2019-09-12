@@ -1,7 +1,7 @@
 import * as actionTypes from "../action/actionTypes";
 import { updateObject } from "../../asset/utility";
 const getSelectedFromlocalStorage = JSON.parse(
-  localStorage.getItem("nutritions")
+  localStorage.getItem("nutrition")
 );
 const initialState = {
   loaded: false,
@@ -35,7 +35,7 @@ const nutritionReducer = (state = initialState, { type, payload }) => {
   }
 };
 const clearSelectedNutrition = (state, payload) => {
-  window.localStorage.removeItem("nutritions");
+  window.localStorage.removeItem("nutrition");
   return updateObject(state, {
     selected: []
   });
@@ -65,10 +65,10 @@ const nutritionFail = (state, payload) => {
 };
 
 const selectedNutrition = (state, payload) => {
-  let localStorageNutrition = JSON.parse(localStorage.getItem("nutritions"));
+  let localStorageNutrition = JSON.parse(localStorage.getItem("nutrition"));
   if (!localStorageNutrition) {
-    window.localStorage.setItem("nutritions", JSON.stringify([]));
-    localStorageNutrition = JSON.parse(localStorage.getItem("nutritions"));
+    window.localStorage.setItem("nutrition", JSON.stringify([]));
+    localStorageNutrition = JSON.parse(localStorage.getItem("nutrition"));
   }
 
   const foundNutrtion = state.data.find(obj => {
@@ -77,7 +77,7 @@ const selectedNutrition = (state, payload) => {
 
   localStorageNutrition.push(foundNutrtion);
   window.localStorage.setItem(
-    "nutritions",
+    "nutrition",
     JSON.stringify(localStorageNutrition)
   );
   const selected = localStorageNutrition;
@@ -86,12 +86,12 @@ const selectedNutrition = (state, payload) => {
   });
 };
 const deSelectedNutrition = (state, payload) => {
-  const localStorageNutrition = JSON.parse(localStorage.getItem("nutritions"));
+  const localStorageNutrition = JSON.parse(localStorage.getItem("nutrition"));
   const updateLocalStorageNutrition = localStorageNutrition.filter(element => {
     return payload.id !== element.id;
   });
   window.localStorage.setItem(
-    "nutritions",
+    "nutrition",
     JSON.stringify(updateLocalStorageNutrition)
   );
 

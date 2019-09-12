@@ -4,7 +4,7 @@ import { Badge, Dropdown } from "flwww";
 import { Icon, Typography } from "antd";
 import Drawer from "./drawer";
 
-import * as actionCreator from "../../Store//action/index";
+import * as actionCreator from "../../Store/action/index";
 
 const { Title, Text } = Typography;
 const styleClearIcon = {
@@ -57,7 +57,7 @@ const Header = props => {
   const nutritionFavList = (
     <div>
       <span>
-        <Text code>Nutritions </Text>
+        <Text code>Nutrition </Text>
         {props.countFavNutrition > 0 ? (
           <Icon
             type="delete"
@@ -87,7 +87,7 @@ const Header = props => {
       />
       <div className="brand-logo">
         <Title level={3} style={{ color: "white" }}>
-          EXERCIZE APP
+         NO PAIN NO GAIN APP
         </Title>
       </div>
       <div>

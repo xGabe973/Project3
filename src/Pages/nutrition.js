@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import * as actionCreator from "../../Store/action/index";
+import * as actionCreator from "../Store/action/index";
 
 // import { Button, Icon } from "antd";
 import NutritionList from "./nutritionList";
-import Spinner from "../../component/UI/Spinner/Spinner";
-import SearchBox from "../../component/UI/SearchBox";
+import Spinner from "../Components/WorkoutUI/Spinner/Spinner";
+import SearchBox from "../Components/WorkoutUI/SearchBox";
 
 class Workouts extends Component {
   state = {
@@ -18,7 +18,7 @@ class Workouts extends Component {
   render() {
     let nutritionList = <Spinner />;
     if (!this.props.loading && !this.state.loading) {
-      nutritionList = <NutritionList reciepeList={this.props.reciepeList} />;
+      nutritionList = <NutritionList reciepeList={this.props.recipeList} />;
     }
 
     return (

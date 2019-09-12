@@ -7,7 +7,7 @@ const { Search } = Input;
 const { Text } = Typography;
 class SearchBoxComp extends React.Component {
   state = {
-    tags: ["chicken", "pottato", "garlic"],
+    tags: ["chicken", "potato", "garlic"],
     inputVisible: false,
     inputValue: "",
     searchQuery: ""
@@ -56,7 +56,7 @@ class SearchBoxComp extends React.Component {
         <h3>Search Your Favourite Recipe</h3>
         <div>
           <Search
-            placeholder="Search Your Favourite Recipe"
+            placeholder="Search Your Favorite Recipe"
             enterButton="Search"
             size="large"
             onSearch={this.handleSearch}
