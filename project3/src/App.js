@@ -4,13 +4,14 @@ import React from 'react';
 import './App.css';
 import Wrapper from './Components/Wrapper/wrapper.js';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import LogInPage from './pages/LogInPage';
+import LogInPage from './Pages/CreateProfile';
 // import Title from "./componets/Title"
-import CreateProfile from "./pages/CreateProfile";
-import ProfilePage from "./pages/ProfilePage";
-import Test from "./pages/Test"
-import workouts from "./pages/workouts"
-import nutrition from "./pages/nutrition"
+import CreateProfile from "./Pages/CreateProfile";
+import ProfilePage from "./Pages/ProfilePage";
+// import Header from "./Components/Header/";
+import Test from "./Pages/Test"
+import workouts from "./Pages/workouts"
+import nutrition from "./Pages/workouts"
 // import NoMatch from "./pages/NoMatch"
 
 

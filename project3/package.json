@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "antd": "^3.23.2",
+    "d3": "^5.12.0",
     "material-kit-react": "^1.8.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "github:reduxjs/redux-thunk"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,7 +36,7 @@
     ]
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
+  "main": "App.js",
   "devDependencies": {},
   "keywords": [],
   "author": "",
