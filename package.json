@@ -1,8 +1,8 @@
 {
-  "name": "Project3",
+  "name": "project3",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "App.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/xGabe973/Project3#readme",
   "dependencies": {
+    "flwww": "^2.0.12",
     "react-router-dom": "^5.0.1"
-  }
+  },
+  "devDependencies": {}
 }
