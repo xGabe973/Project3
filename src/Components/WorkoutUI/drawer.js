@@ -8,7 +8,7 @@ const DrawerComp = props => {
       toggleDrawer={props.toggleDrawer}
       style={{ overflow: "hidden" }}
     >
-      <h3>EXERCIZE APP</h3>
+      <h3>NO PAIN NO GAIN APP</h3>
       <nav className="Drawer-Links-wrapper">
         <NavLink exact to="/workouts" activeClassName="active-links">
           WORKOUTS

@@ -3,17 +3,17 @@ import { connect } from "react-redux";
 
 import { message } from "flwww";
 import { List, Avatar, Icon } from "antd";
-import defaultThumbnail from "../../asset/thumbail_nutrition.svg";
-import * as actionCreator from "../../Store/action/index";
+import defaultThumbnail from "../asset/thumbail_nutrition.svg";
+import * as actionCreator from "../Store/action/index";
 
 const NutritionList = props => {
   return (
     <List
       itemLayout="horizontal"
-      dataSource={props.reciepeList}
+      dataSource={props.recipeList}
       renderItem={item => {
         const { id, title, href, ingredients, thumbnail } = item;
-        const foundSelected = props.selectedNurition.find(obj => {
+        const foundSelected = props.selectedNutrition.find(obj => {
           return obj.id === id;
         });
         const checkSelected = foundSelected ? true : false;
@@ -78,7 +78,7 @@ const NutritionList = props => {
 
 const mapStateToProps = state => {
   return {
-    selectedNurition: state.nutritionReducer.selected,
+    selectedNutrition: state.nutritionReducer.selected,
     maxCountSelection: state.nutritionReducer.selected.length === 10
   };
 };

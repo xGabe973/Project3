@@ -15,7 +15,7 @@ class Workouts extends Component {
     this.props.initializeWorkouts();
   }
   render() {
-    const { workouts, selecedWorkouts } = this.props;
+    const { workouts, selectedWorkouts } = this.props;
     let workoutList = <Spinner />;
 
     if (!this.props.loading && !this.state.loading && workouts) {
@@ -23,7 +23,7 @@ class Workouts extends Component {
       workoutList = workouts.map((obj, index) => {
         const { id, Workout } = obj;
         const Reps_x_Sets = obj["Reps-x-Sets"];
-        const foundSelected = selecedWorkouts.find(obj => obj.id === id);
+        const foundSelected = selectedWorkouts.find(obj => obj.id === id);
         const checkSelected = foundSelected ? true : false;
         return (
           <WorkoutCard
@@ -57,7 +57,7 @@ class Workouts extends Component {
 const mapStateToProps = state => {
   return {
     workouts: state.workoutReducer.data,
-    selecedWorkouts: state.workoutReducer.selected,
+    selectedWorkouts: state.workoutReducer.selected,
     loaded: state.workoutReducer.loaded,
     loading: state.workoutReducer.loading,
     error: state.workoutReducer.error
