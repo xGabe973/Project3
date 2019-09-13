@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Navbar from '../Components/Navbar/navbar.js';
+import Footer from "../Components/Footer";
 
 
 
@@ -7,6 +9,7 @@ class LogInPage extends Component{
     render() {
     return(
         <div> 
+            <Navbar />
         <form>
            
             <div class="form-group">
@@ -26,7 +29,7 @@ class LogInPage extends Component{
         </form>
        
             <Link to="/">← HOME </Link>
-          
+          <Footer />
          </div>
 
     )
