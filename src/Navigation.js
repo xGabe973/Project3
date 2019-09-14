@@ -11,7 +11,7 @@ import workouts from "./Pages/workouts"
 
 // Added from app.js
 import './App.css';
-//import Wrapper from './Components/Wrapper/wrapper.js';
+import Wrapper from './Components/Wrapper/wrapper.js';
 import CreateProfile from "./Pages/CreateProfile";
 import Test from "./Pages/Test"
 
@@ -20,7 +20,7 @@ class Navigation extends Component {
         return (
             <Router>
                 <div>
-                   
+                   <Wrapper>
                     <Link to="/">
    
                         </Link>
@@ -50,7 +50,7 @@ class Navigation extends Component {
                         <Route exact path="/create" component={CreateProfile} />
                         <Route exact path="/test" component={Test} />
                     </Switch>
-                
+                </Wrapper>
                 </div>
             </Router>
         )
