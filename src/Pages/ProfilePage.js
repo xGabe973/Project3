@@ -13,7 +13,7 @@ class ProfilePage extends Component {
             <div>
                
                 <Navbar />
-                <p>Page is coming soon!</p>
+                <p>Profile page is coming soon!</p>
                 <Link to="/">←Back to log in page</Link>
 
 
