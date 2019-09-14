@@ -2,7 +2,7 @@ import React from 'react';
 
 // import logo from './logo.svg';
 import './App.css';
-import Wrapper from './Components/Wrapper/wrapper.js';
+import Wrapper from './Components/Wrapper/wrapper';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import LogInPage from './pages/LogInPage';
 // import Title from "./componets/Title"

@@ -14,11 +14,13 @@ class ProfilePage extends Component {
                
                 <Navbar />
                 <p>Page is coming soon!</p>
+                Your BMI: <input type="text" name="bmi" size="10"/><br />
+                This Means: <input type="text" name="meaning" size="25"/><br />
                 <Link to="/">←Back to log in page</Link>
 
 
 
-                <Footer /> }
+                <Footer /> 
 
             </div>
            

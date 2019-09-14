@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import Form from "../Components/Form/form";
 
 
 class CreateProfile extends Component {
@@ -11,7 +11,7 @@ class CreateProfile extends Component {
         weight: "",
         height: "",
         age: "",
-        diet: "Cut, Bulk, Maintain"
+        diet: "Cut, Bulk, Maintain",
     };
 
     handleInputChange = event => {
@@ -27,6 +27,7 @@ class CreateProfile extends Component {
         alert(`Welcome ${this.state.firstName}`);
         this.setState({
             firstName: ""
+            
         });
     };
 
@@ -56,9 +57,11 @@ render() {
                         </select>
                     </div>
                 </form>
+                <Form />
+                <button type="submit" onClick={this.handleFormSubmit}  className="btn btn-success">
+                    Create Profile
+                </button>
             </div>
-            <Link to="/">← Back to Log In Page</Link>
-
         </div>
     )
 }
