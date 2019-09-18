@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 
 class ProfilePage extends Component {
@@ -11,46 +13,61 @@ class ProfilePage extends Component {
             
             <div>
                
-                <div class="card">
-                    <div class="card-body">
-                        <h1>Hello, NAME</h1>
-                    </div>
-                </div>
+               <Card>
+                    <Card.Body>Hi, NAME!</Card.Body>
+               </Card>
                 
-                <div class="card">
-                    <img src="..." class="card-img-top" alt="..."></img>
-                    <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                </div>
+               <Card>
+                <Card.Header>Stats</Card.Header>
+                <Card.Body>
+                    <Card.Title>Stats</Card.Title>
+                    <Card.Text>
+                    Weight:
+                    Height:
+                    Age:
+                    </Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+                </Card>
 
-                <div class="card">
-                    <div class="card-body">
-                        <h2>Your Stats:</h2>
-                    </div>
-                </div>
+                <Card>
+                <Card.Header>Stats</Card.Header>
+                <Card.Body>
+                    <Card.Title>Diet Plan:</Card.Title>
+                    <Card.Text>
+                    You chose to: CUT/BULK/MAINTAIN
+                    </Card.Text>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
+                </Card.Body>
+                </Card>
+              
+                <Card>
+                <Card.Header>Recipes</Card.Header>
+                <Card.Body>
+                    <Card.Title>Recipes</Card.Title>
+                    <Card.Text>
+                   dsfsdfsdfsdfsdf
+                    </Card.Text>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
+                </Card.Body>
+                </Card>
 
-                <div class="card">
-                    <div class="card-body">
-                        <h2>Recipes</h2>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-body">
-                        <h2>Workout</h2>
-                    </div>
-                </div>          
-                <div class="card">
-                    <div class="card-body">
-                        <h2>Diet Plan:</h2>
-                    </div>
-                </div>
+                
+                <Card>
+                <Card.Header>Workouts</Card.Header>
+                <Card.Body>
+                    <Card.Title>Workouts</Card.Title>
+                    <Card.Text>
+                   fsfdfgsfsdf
+                    </Card.Text>
+                    {/* <Button variant="primary">Go somewhere</Button> */}
+                </Card.Body>
+                </Card>
                 <Link to="/">←Back to log in page</Link>
 
 
 
-                <Footer></Footer> 
+                <Footer />
 
             </div>
            

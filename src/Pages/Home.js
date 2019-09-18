@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import Footer from "../Components/Footer";
+import Footer from "../Components/Footer";
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import BackgroundImagePage from "../Components/BackgroundImagePage";
@@ -25,7 +25,7 @@ class Home extends Component{
                 </Container>
                 </Jumbotron>
                 <BackgroundImagePage />
-                {/* <Footer /> */}
+                <Footer />
             </div>
         )  
     }
