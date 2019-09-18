@@ -14,6 +14,16 @@ import './App.css';
 import Wrapper from './Components/Wrapper/wrapper.js';
 import CreateProfile from "./Pages/CreateProfile";
 import Test from "./Pages/Test"
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import FormControl from 'react-bootstrap/FormControl';
+
+
+
 
 class Navigation extends Component {
     render() {
@@ -25,18 +35,38 @@ class Navigation extends Component {
    
                         </Link>
                         {this.props.authenticated ? (
-                            <span>
-                                <Link to ="/create"><h5>Create a New Profile</h5></Link>
-                                <Link to="/profile"><h5>Profile</h5></Link>
-                                <Link to="/nutrition"><h5>Nutrition</h5></Link>
-                                <Link to="/workouts"><h5>Workouts</h5></Link>
-                                <LogOut />
-                            </span>
+                            <>
+                            <Navbar >
+                              <Navbar.Brand href="/">Workout APPP</Navbar.Brand>
+                              <Nav className="mr-auto">
+                                <Nav.Link href="/profile">Profile</Nav.Link>
+                                <Nav.Link href="/workouts">Workouts</Nav.Link>
+                                <Nav.Link href="/recipes">Recipes</Nav.Link>
+                              </Nav>
+                              <Form inline>
+                                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                                <Button variant="outline-info">Search</Button>
+                              </Form>
+                              <Form inline>
+                              
+                              </Form>
+                            </Navbar>
+                            <LogOut />
+                            <br />
+                            
+                          </>
+
+                            
                         ) : (
-                            <span>
-                                <Link to="/login"><h5>Log In</h5></Link>
-                                <Link to="/register"><h5>Register</h5></Link>
-                            </span>
+                            <>
+                            <Navbar >
+                              <Navbar.Brand href="#home">Workout APPP</Navbar.Brand>
+                              <Nav className="mr-auto">
+                                <Nav.Link href="/login">Log In</Nav.Link>
+                                <Nav.Link href="/register">Register</Nav.Link>
+                              </Nav>
+                            </Navbar>
+                         </>
                         )}
                         
                     <Switch>

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Navigation from "./Navigation";
 import firebase from "./firebase";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 class App extends Component {
   state = {
@@ -20,7 +23,13 @@ class App extends Component {
   }
   render() {
     return <Navigation authenticated={this.state.authenticated} />;
+    
+    
+
+
   }
+
+
 }
 
 export default App;
