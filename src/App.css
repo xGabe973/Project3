@@ -31,33 +31,3 @@
     transform: rotate(360deg);
   }
 }
-
-/* PAGESTYLing */
-body {
- 
-    font-family: 'Gayathri', sans-serif; 
-
-
-}
-/*navagation*/
-.navbar {
-  background-color: green;
-  
-}
-/*navagation*/
-
-/* welcome */
-
-
-.bgImg{
-  margin: 0 auto;
-}
-/* welcome */
-
-/* logIn */
-.card-body {
-  width: 400px;
-  margin: 0 auto;
-}
-/* logIn */
-
