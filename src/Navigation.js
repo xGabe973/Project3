@@ -40,7 +40,7 @@ class Navigation extends Component {
                               <Nav className="mr-auto">
                                 <Nav.Link href="/profile">Profile</Nav.Link>
                                 <Nav.Link href="/workouts">Workouts</Nav.Link>
-                                <Nav.Link href="/recipes">Recipes</Nav.Link>
+                                <Nav.Link href="/nutrition">Recipes</Nav.Link>
                               </Nav>
                               <Form inline>
                                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
