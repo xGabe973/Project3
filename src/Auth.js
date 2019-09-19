@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import App from "./App";
 import firebase from "./firebase";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Auth extends Component{
     state = {
