@@ -2,11 +2,29 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Navbar from '../Components/Navbar/navbar.js';
 import Footer from "../Components/Footer";
-
+import API from "../utils/API";
+import firebase from "../firebase";
 
 class ProfilePage extends Component {
+    state = {
+        UID: "",
+        name: "",
+        age: "",
+        height: "",
+        weight: "",
+        bmi: "",
+        bodyType: "",
+    };
 
+    componentDidMount() {
+        this.loadUsers();
+    }
 
+    loadUser = (UID) => {
+        API.getUser(UID)
+        .then(res => this.setState({ user: res.data }))
+        .catch(err => console.log(err));
+    }
     render() {
         return (
             
@@ -27,5 +45,4 @@ class ProfilePage extends Component {
         )
     }
 }
-
 export default ProfilePage;

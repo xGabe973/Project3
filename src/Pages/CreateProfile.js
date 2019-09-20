@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-
+import Form from '../Components/Form/form'
 
 class CreateProfile extends Component {
     state = {
@@ -52,6 +51,7 @@ render() {
                         </select>
                     </div>
                 </form>
+                <Form />
             </div>
             <Link to="/">← Back to Log In Page</Link>
 
