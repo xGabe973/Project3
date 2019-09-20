@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
+
+const colorHeader = 
+{backgroundColor: '#C38D9E'};
+const colorName ={backgroundColor: '#E8A87C', borderRadius: '50%'}
+const cardColor ={backgroundColor: '#ecf8f7'};
 
 class ProfilePage extends Component {
 
@@ -11,54 +16,46 @@ class ProfilePage extends Component {
             
             <div>
                
-               <Card>
-                    <Card.Body>Hi, NAME!</Card.Body>
+               <Card  style={colorName} className="nameBox">
+                    <Card.Body  >Hi, NAME!</Card.Body>
                </Card>
                 
-               <Card>
-                <Card.Header>Stats</Card.Header>
-                <Card.Body>
-                    <Card.Title>Stats</Card.Title>
+               <Card className="statsBox">
+                <Card.Header style={colorHeader} className="cardHeader">Stats</Card.Header>
+                <Card.Body style={cardColor}>
                     <Card.Text>
-                    Weight:
-                    Height:
+                    Weight:<br />
+                    Height: <br />
                     Age:
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
                 </Card>
 
-                <Card>
-                <Card.Header>Stats</Card.Header>
-                <Card.Body>
-                    <Card.Title>Diet Plan:</Card.Title>
+                <Card className="dietBox">
+                <Card.Header style={colorHeader} className="cardHeader">Diet</Card.Header>
+                <Card.Body style={cardColor}>
                     <Card.Text>
                     You chose to: CUT/BULK/MAINTAIN
                     </Card.Text>
-                    {/* <Button variant="primary">Go somewhere</Button> */}
                 </Card.Body>
                 </Card>
               
-                <Card>
-                <Card.Header>Recipes</Card.Header>
-                <Card.Body>
-                    <Card.Title>Recipes</Card.Title>
+                <Card className="nutritionBox">
+                <Card.Header style={colorHeader} className="cardHeader">Nutrition</Card.Header>
+                <Card.Body style={cardColor}>
                     <Card.Text>
                    dsfsdfsdfsdfsdf
                     </Card.Text>
-                    {/* <Button variant="primary">Go somewhere</Button> */}
                 </Card.Body>
                 </Card>
 
                 
-                <Card>
-                <Card.Header>Workouts</Card.Header>
-                <Card.Body>
-                    <Card.Title>Workouts</Card.Title>
+                <Card className="workoutsBox">
+                <Card.Header style={colorHeader} className="cardHeader">Workouts</Card.Header>
+                <Card.Body style={cardColor}>
                     <Card.Text>
                    fsfdfgsfsdf
                     </Card.Text>
-                    {/* <Button variant="primary">Go somewhere</Button> */}
                 </Card.Body>
                 </Card>
                 <Link to="/">←Back to log in page</Link>

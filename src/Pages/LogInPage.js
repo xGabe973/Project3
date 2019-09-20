@@ -35,7 +35,7 @@ state = {
       const { email, password, error } = this.state;
     return(
         <div class="container">
-          <div class="card-body">
+          <div class="card-body cardSign">
             <h1 className="signIn">Please sign in</h1>
             {error ? (
               <h3>{error.message}</h3>
