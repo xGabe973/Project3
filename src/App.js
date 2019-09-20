@@ -29,7 +29,7 @@ class App extends Component {
                         {this.props.authenticated ? (
                             <>
                             <Navbar >
-                              <Navbar.Brand href="/">Mission SlimPossible</Navbar.Brand>
+                              <Navbar.Brand href="/">MissionSlimPossible</Navbar.Brand>
                               <Nav className="mr-auto">
                                 <NavLink to="/profile">Profile</NavLink>
                                 <NavLink to="/workouts">Workouts </NavLink>
@@ -43,7 +43,7 @@ class App extends Component {
                         ) : (
                             <>
                             <Navbar>
-                              <Navbar.Brand href="#home">Mission SlimPossible</Navbar.Brand>
+                              <Navbar.Brand href="#home">MissionSlimPossible</Navbar.Brand>
                               <Nav className="mr-auto">
                                 <Nav.Link href="/login">Log In</Nav.Link>
                                 <Nav.Link href="/register">Register</Nav.Link>
