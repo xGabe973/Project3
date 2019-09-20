@@ -14,9 +14,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
+// import FormControl from 'react-bootstrap/FormControl';
 
 class App extends Component {
     render() {
@@ -29,7 +29,7 @@ class App extends Component {
                         {this.props.authenticated ? (
                             <>
                             <Navbar >
-                              <Navbar.Brand href="/">Workout APPP</Navbar.Brand>
+                              <Navbar.Brand href="/">Mission SlimPossible</Navbar.Brand>
                               <Nav className="mr-auto">
                                 <NavLink to="/profile">Profile</NavLink>
                                 <NavLink to="/workouts">Workouts </NavLink>
@@ -37,19 +37,13 @@ class App extends Component {
 
                                 <LogOut />
                               </Nav>
-                              <Form inline>
-                                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                                <Button variant="outline-info">Search</Button>
-                              </Form>
-                              <Form inline> 
-                              </Form>
                             </Navbar> 
                             <br /> 
                           </>  
                         ) : (
                             <>
                             <Navbar>
-                              <Navbar.Brand href="#home">Workout APPP</Navbar.Brand>
+                              <Navbar.Brand href="#home">Mission SlimPossible</Navbar.Brand>
                               <Nav className="mr-auto">
                                 <Nav.Link href="/login">Log In</Nav.Link>
                                 <Nav.Link href="/register">Register</Nav.Link>
