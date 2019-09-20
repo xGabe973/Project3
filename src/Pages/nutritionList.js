@@ -10,10 +10,10 @@ const NutritionList = props => {
   return (
     <List
       itemLayout="horizontal"
-      dataSource={props.recipeList}
+      dataSource={props.reciepeList}
       renderItem={item => {
         const { id, title, href, ingredients, thumbnail } = item;
-        const foundSelected = props.selectedNutrition.find(obj => {
+        const foundSelected = props.selectedNurition.find(obj => {
           return obj.id === id;
         });
         const checkSelected = foundSelected ? true : false;
@@ -78,7 +78,7 @@ const NutritionList = props => {
 
 const mapStateToProps = state => {
   return {
-    selectedNutrition: state.nutritionReducer.selected,
+    selectedNurition: state.nutritionReducer.selected,
     maxCountSelection: state.nutritionReducer.selected.length === 10
   };
 };

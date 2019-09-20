@@ -7,7 +7,7 @@ import NutritionList from "./nutritionList";
 import Spinner from "../Components/WorkoutUI/Spinner/Spinner";
 import SearchBox from "../Components/WorkoutUI/SearchBox";
 
-class nutrition extends Component {
+class Workouts extends Component {
   state = {
     loading: true
   };
@@ -18,7 +18,7 @@ class nutrition extends Component {
   render() {
     let nutritionList = <Spinner />;
     if (!this.props.loading && !this.state.loading) {
-      nutritionList = <NutritionList reciepeList={this.props.recipeList} />;
+      nutritionList = <NutritionList reciepeList={this.props.reciepeList} />;
     }
 
     return (
@@ -45,4 +45,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(nutrition);
+)(Workouts);

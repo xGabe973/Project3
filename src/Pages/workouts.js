@@ -21,7 +21,7 @@ class Workouts extends Component {
     if (!this.props.loading && !this.state.loading && workouts) {
       // WORKOUT-List: array of ReactNode single workout
       workoutList = workouts.map((obj, index) => {
-        const { id, Workout } = obj;
+        const { id, Workout, url } = obj;
         const Reps_x_Sets = obj["Reps-x-Sets"];
         const foundSelected = selectedWorkouts.find(obj => obj.id === id);
         const checkSelected = foundSelected ? true : false;
@@ -31,6 +31,7 @@ class Workouts extends Component {
             title={Workout}
             description={Reps_x_Sets}
             id={id}
+            url={url}
             selected={checkSelected}
           />
         );
