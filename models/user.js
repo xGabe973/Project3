@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  uid: { type: Number, required: true },
   name: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true},
   age: { type: Number, required: true },
   height: { type: Number, required: true},
   weight: { type: Number, required: true},
@@ -14,4 +15,4 @@ const userSchema = new Schema({
 
 const User = mongoose.model("User", userSchema);
 
-module.exports = User;
+module.exports = User = mongoose.model("users, UserSchema");
