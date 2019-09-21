@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import firebase from "../firebase";
 
+
 class LogInPage extends Component{
 
 state = {
@@ -30,7 +31,6 @@ state = {
         this.setState({ error: error });
       });
   };
-
     render() {
       const { email, password, error } = this.state;
     return(

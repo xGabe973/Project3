@@ -68,14 +68,15 @@ margin: 0 auto;
 
 /* logIn */
 .cardSign {
-width: 400px;
+width: 40%;
 margin: 0 auto;
 background-color:#C38D9E;
+margin-top: 20px;
+border-radius: 10%;
 }
 
 .signIn {
 display: inline;
-
 }
 .emailBox {
 margin-top: 30px;
@@ -125,3 +126,20 @@ margin-top: -190px;
   margin-top: 20px;
 }
 /*profilepage */
+
+/* register page */
+.registerForm {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #E8A87C;
+  margin-top: 20px;
+  border-radius: 5%;
+}
+/* register page */
+
+
+/* workout page */
+.card-custom {
+  width: 50%;
+}
+/* workout page */
