@@ -36,7 +36,7 @@ class Home extends Component{
                 </Jumbotron> */}
 
                 <Card >
-                    <Card.Img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6nxDnmFw_IXdHUA4PpVXEOVPniEFsaaM1svbEu92ZWvo68EL6uA" alt="hearts"/>
+                    <Card.Img src="https://www.phhyky.fi/assets/files/2016/11/Syd%C3%A4n-astia.jpeg" alt="hearts"/>
                     <Card.ImgOverlay style={bgColor} >
                         <Card.Title className="bgColor" style={fontSize}>MissionSlimPossible</Card.Title>
                         <Card.Text style={bgColor} class="tagColor" style={tagSize}>
