@@ -18,7 +18,7 @@ class Workouts extends Component {
   render() {
     let nutritionList = <Spinner />;
     if (!this.props.loading && !this.state.loading) {
-      nutritionList = <NutritionList reciepeList={this.props.reciepeList} />;
+      nutritionList = <NutritionList reciepeList={this.props.recipeList} />;
     }
 
     return (
