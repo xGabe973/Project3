@@ -4,7 +4,8 @@ import './style.css';
 
 function BackgroundImagePage() {
   return (
-      <div className="bg"></div>
+      <div className="bg">
+      <img src="src/asset/veg.jpg" alt="heart"></img></div>
   );
 }
 

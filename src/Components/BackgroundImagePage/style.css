@@ -5,8 +5,8 @@ body, html {
 
     }
     .bg {
-    background-image: url("../../asset/bg2.jpg");
+    background-image: url("../../asset/veg.jpg");
     background-position: center;
-    background-size: cover;
-    height: 550px;
+    background-repeat: no-repeat;
+    height: 650px;
     }
