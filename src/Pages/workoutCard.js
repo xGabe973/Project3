@@ -53,13 +53,14 @@ const Item = props => {
       <span>{description}</span>
     </Tooltip>
   );
-  const borderStyle = props.selected ? { borderColor: " #52c41a" } : null;
+  const imgProps = { width: '250px', height: '250px. '}
+  const borderStyle = props.selected ? { borderColor: " #52c41a"} : null;
   return (
     <Card
       className="card-custom"
       style={borderStyle}
       hoverable={!props.selected}
-      cover={<img alt="Shoulder-Shrugs" src={workout_card} />}
+      cover={<img alt="Shoulder-Shrugs" src={workout_card} style={imgProps} />}
       actions={actions}
     >
       <Meta title={titleWithToolTip} description={discWithToolTip} />

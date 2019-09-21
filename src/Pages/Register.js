@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 import firebase from "../firebase";
+import Form from 'react-bootstrap/Form'
 
 class Register extends Component {
     state = {
@@ -31,7 +32,7 @@ class Register extends Component {
         const { email, password, error } = this.state;
         return (
             <div class="container">
-            <div class="card-body">
+            <div class="card-body registerForm">
                 <h1>Register your account</h1>
                 { error ? (
                     <h3>{error.message}</h3>
@@ -39,16 +40,34 @@ class Register extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Email address</label>
-                        <input type="text" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" value={email} onChange={this.handleInputChange} />
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <input type="text" name="email" class="form-control" id="exampleFormControlInput1" placeholder="Ex: email@email.com" value={email} onChange={this.handleInputChange} />
+                        <small id="emailHelp" class="form-text text-muted">All information is secure</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Create your account password" value={password} onChange={this.handleInputChange} />
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password must be at least 6 characters long" value={password} onChange={this.handleInputChange} />
                     </div>
-                    <button type="submit" class="btn btn-primary" children="Register">Submit</button> 
                 </form>
+                <Form.Group controlId="exampleForm.ControlInput1">
+                    <Form.Label>Weight</Form.Label>
+                    <Form.Control type="integer" placeholder="in kilograms" />
+                    <Form.Label>Height</Form.Label>
+                    <Form.Control type="integer" placeholder="in centimeters" />
+                    <Form.Label>Age</Form.Label>
+                    <Form.Control type="integer" placeholder="Age" />
+                    <Form.Group controlId="exampleForm.ControlSelect1">
+                        <Form.Label>Diet Plan</Form.Label>
+                        <Form.Control as="select">
+                        <option>Cut (cut fat)</option>
+                        <option>Maintain (stay at current weight)</option>
+                        <option>Bulk (build muscle)</option>
+                        </Form.Control>
+                    </Form.Group>
+                </Form.Group>
+                <button type="submit" class="btn btn-primary" children="Register">Submit</button> 
+
             </div>
+
             <Link to="/">← Back to Log In Page</Link>
         </div>
         );

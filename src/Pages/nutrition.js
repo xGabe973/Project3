@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actionCreator from "../Store/action/index";
-
 // import { Button, Icon } from "antd";
 import NutritionList from "./nutritionList";
 import Spinner from "../Components/WorkoutUI/Spinner/Spinner";
@@ -18,7 +17,7 @@ class Workouts extends Component {
   render() {
     let nutritionList = <Spinner />;
     if (!this.props.loading && !this.state.loading) {
-      nutritionList = <NutritionList reciepeList={this.props.recipeList} />;
+      nutritionList = <NutritionList recipeList={this.props.recipeList} />;
     }
 
     return (
@@ -33,7 +32,7 @@ class Workouts extends Component {
 const mapStateToProps = state => {
   return {
     loading: state.nutritionReducer.loading,
-    reciepeList: state.nutritionReducer.data
+    recipeList: state.nutritionReducer.data
   };
 };
 const mapDispatchToProps = dispatch => {

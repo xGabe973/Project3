@@ -19,8 +19,8 @@ const nutritionFail = error => {
   };
 };
 export const initNutritionAsync = params => {
-  const ings = params ? params.i : "chicken";
-  const query = params ? params.q : "health";
+  const ings = params ? params.i : " ";
+  const query = params ? params.q : " ";
   return (dispatch, getState) => {
     //TODO# HERE MAKE ASYNC CALLS.
     dispatch(initNutrition());
