@@ -57,7 +57,7 @@ background-color: #41B3A3;
 /*navagation*/
 
 /* welcome */
-.jumbotron {
+/* .jumbotron {
 opacity: 0.8;
 margin-top: 10px;
 font-size: 32px;
@@ -67,6 +67,13 @@ padding-top: -0px;
 
 .bgImg{
 margin: 0 auto;
+} */
+
+.bgColor {
+  background-color: #C38D9E;
+}
+.tagColor {
+  background-color: #C38D9E;
 }
 /* welcome */
 

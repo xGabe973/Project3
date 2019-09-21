@@ -7,10 +7,11 @@ import Footer from "../Components/Footer";
 // import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Card from 'react-bootstrap/Card';
 
-// const jumboColor ={backgroundColor: '#E8A87C', textAlign: 'center'}
-// const imageBg = <img src="src/Components/BackgroundImagePage/index.js"  alt="hearts"></img>
-const fontSize = {fontSize: '62px', textAlign: 'center'};
-const tagSize= {fontSize:'48px', textAlign: 'center'}
+const fontSize = {fontSize: '62px', textAlign: 'center', color: '#41B3A3',fontWeight: 'bolder', backgroudColor: 'black'};
+const tagSize= {fontSize:'48px', textAlign: 'center', color: '#41B3A3',fontWeight: 'bolder'}
+const bgColor ={ backgroudColor: '#C38D9E'};
+
+
 class Home extends Component{
     render() {
         return(
@@ -34,11 +35,11 @@ class Home extends Component{
                 </Container>
                 </Jumbotron> */}
 
-                <Card className="bg-dark text-white">
-                    <Card.Img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6nxDnmFw_IXdHUA4PpVXEOVPniEFsaaM1svbEu92ZWvo68EL6uA" alt="hearts" />
-                    <Card.ImgOverlay >
-                        <Card.Title style={fontSize}>MissionSlimPossible</Card.Title>
-                        <Card.Text style={tagSize}>
+                <Card >
+                    <Card.Img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6nxDnmFw_IXdHUA4PpVXEOVPniEFsaaM1svbEu92ZWvo68EL6uA" alt="hearts"/>
+                    <Card.ImgOverlay style={bgColor} >
+                        <Card.Title className="bgColor" style={fontSize}>MissionSlimPossible</Card.Title>
+                        <Card.Text style={bgColor} class="tagColor" style={tagSize}>
                         The new go to app to help you meet your nutrition goals!<br />
                         <span role="img" aria-label="avacado">🥑 </span>
                         <span role="img" aria-label="broccoli">🥦 </span>
