@@ -19,7 +19,13 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "redux": "^4.0.4",
-    "redux-thunk": "github:reduxjs/redux-thunk"
+    "redux-thunk": "github:reduxjs/redux-thunk",
+    "classnames": "^2.2.6",
+    "cors": "^2.8.5",
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.3.16",
+    "react-toastify": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

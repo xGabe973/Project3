@@ -24,11 +24,13 @@ state = {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then((user) => {
+        console.log(user);
         this.props.history.push('/');
       })
       .catch((error) => {
         this.setState({ error: error });
       });
+      
   };
 
     render() {

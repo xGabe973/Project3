@@ -6,9 +6,10 @@ class Register extends Component {
     state = {
         email: "",
         password: "",
-        error: null
+        error: null,
+        id: user.uid
     };
-
+        
     handleInputChange = (event) => {
         this.setState({ [event.target.name]: event.target.value });
     };
@@ -54,5 +55,6 @@ class Register extends Component {
         );
     };
 };
+console.log(state);
 
 export default withRouter(Register);
