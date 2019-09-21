@@ -57,12 +57,23 @@ background-color: #41B3A3;
 /*navagation*/
 
 /* welcome */
-.jumbotron {
-opacity: .7;
+/* .jumbotron {
+opacity: 0.8;
+margin-top: 10px;
+font-size: 32px;
+height:220px;
+padding-top: -0px;
 }
 
 .bgImg{
 margin: 0 auto;
+} */
+
+.bgColor {
+  background-color: #C38D9E;
+}
+.tagColor {
+  background-color: #C38D9E;
 }
 /* welcome */
 
@@ -139,7 +150,9 @@ margin-top: -190px;
 
 
 /* workout page */
-.card-custom {
-  width: 50%;
-}
+
 /* workout page */
+
+/* nutrition page */
+
+/* nutrition page */

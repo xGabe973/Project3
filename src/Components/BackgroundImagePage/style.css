@@ -4,9 +4,9 @@ body, html {
    
 
     }
-    .bg {
-    background-image: url("../../asset/bg2.jpg");
-    background-position: center;
-    background-size: cover;
-    height: 550px;
-    }
+    /* .bg {
+    background-image: url("../../asset/veg.jpg"); 
+     background-position: center; 
+     background-repeat: no-repeat; 
+    height: 650px;
+    } */

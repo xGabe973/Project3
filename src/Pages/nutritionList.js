@@ -30,7 +30,7 @@ const NutritionList = props => {
         if (checkSelected) {
           actions.push(
             <Icon
-              style={{ margin: "0px", padding: "12px 0" }}
+              style={{ margin: "0px", padding: "16px 0" }}
               type="check-circle"
               theme="twoTone"
               twoToneColor="#52c41a"
@@ -40,7 +40,7 @@ const NutritionList = props => {
         } else {
           actions.push(
             <Icon
-              style={{ margin: "0", padding: "18px 0" }}
+              style={{ margin: "0", padding: "22px 0" }}
               type="check"
               key="check-1"
               onClick={onSelected}
