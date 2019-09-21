@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-
 import { message } from "flwww";
 import { List, Avatar, Icon } from "antd";
 import defaultThumbnail from "../asset/thumbail_nutrition.svg";

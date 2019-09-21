@@ -7,7 +7,7 @@ const { Search } = Input;
 const { Text } = Typography;
 class SearchBoxComp extends React.Component {
   state = {
-    tags: ["chicken", "potato", "garlic"],
+    tags: [" "],
     inputVisible: false,
     inputValue: "",
     searchQuery: ""
