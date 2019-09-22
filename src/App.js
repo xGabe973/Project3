@@ -38,7 +38,6 @@ class App extends Component {
                                 <LogOut />
                               </Nav>
                             </Navbar> 
-                            <br /> 
                           </>  
                         ) : (
                             <>
