@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Home from "./Pages/Home";
 import Register from "./Pages/Register";
 import ProtectedRoute from "./ProtectedRoute";
@@ -18,6 +18,7 @@ import Nav from 'react-bootstrap/Nav';
 // import Form from 'react-bootstrap/Form';
 // import FormControl from 'react-bootstrap/FormControl';
 
+
 class App extends Component {
     render() {
         return (
@@ -25,15 +26,16 @@ class App extends Component {
                 <div>
 
                    <Wrapper>
-                    <NavLink to="/"></NavLink>
+                    <Nav.Link to="/"></Nav.Link>
                         {this.props.authenticated ? (
                             <>
                             <Navbar >
                               <Navbar.Brand href="/">MissionSlimPossible</Navbar.Brand>
                               <Nav className="mr-auto">
-                                <NavLink to="/profile">Profile</NavLink>
-                                <NavLink to="/workouts">Workouts </NavLink>
-                                <NavLink to="/nutrition">Nutrition </NavLink>
+                            
+                                <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+                                <Nav.Link as={Link} to="/workouts">Workouts </Nav.Link>
+                                <Nav.Link as={Link} to="/nutrition">Nutrition </Nav.Link>
 
                                 <LogOut />
                               </Nav>
