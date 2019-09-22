@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class CreateProfile extends Component {
     state = {
-        userName: "",
+        //userName: "",
         //password: "",
         firstName: "",
         weight: "",

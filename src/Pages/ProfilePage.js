@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import axios from 'axios';
+import { tsConstructorType } from "@babel/types";
 // import Button from 'react-bootstrap/Button'
 
 const colorHeader = 
@@ -11,13 +13,26 @@ const cardColor ={backgroundColor: '#ecf8f7'};
 
 class ProfilePage extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {users:[]};
+    };
+    componenetDidMount() {
+        axios.get('http://localhost:4000/todos/')
+        .then(response => {
+            this.setState({ users: response.data})
+        })
+        .catch(function (error){
+            console.log(error);
+        })
+    }
     render() {
         return (
             
             <div>
                
                <Card  style={colorName} className="nameBox">
-                    <Card.Body  >Hi, NAME!</Card.Body>
+                    <Card.Body  >Hi, {this.user.userName} !</Card.Body>
                </Card>
                 
                <Card className="statsBox">
