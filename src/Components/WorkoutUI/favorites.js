@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Badge, Dropdown } from "flwww";
 import { Icon, Typography } from "antd";
@@ -15,13 +15,13 @@ const styleClearIcon = {
   fontSize: "larger",
   borderRadius: "1rem"
 };
+
+
 // Functional Component
 const Favorites = props => {
-  const [drawerIsVisible, setDrawer] = useState(false);
-  const toggleDrawer = () => {
-    setDrawer(!drawerIsVisible);
-  };
 
+ 
+ 
   const maxCountFav = props.countFavWorkout <= 19;
   const badgeColor = {
     color: maxCountFav ? "#006eff" : "#fff",
@@ -81,7 +81,9 @@ const Favorites = props => {
 
   return (
     <header className="App-header">
-      <div>
+      
+     
+     <div>
         <Dropdown
           elementList={[workoutFavList, nutritionFavList]}
           position="bottom-right"
