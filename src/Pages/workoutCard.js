@@ -5,11 +5,14 @@ import { Card, Icon, Tooltip } from "antd";
 
 import * as actionCreator from "../Store/action/index";
 // import workout_card from "../asset/workout_card.svg";
-const workout_card = "https://media.giphy.com/media/7SrW2AY3m5CY8/giphy.gif";
+//const workout_card = "https://media.giphy.com/media/7SrW2AY3m5CY8/giphy.gif";
 const { Meta } = Card;
 
 const Item = props => {
-  const { title, description, id, selected } = props;
+  const { title, description, id, selected, url } = props;
+  const workout_card = url
+    ? url
+    : "https://media.giphy.com/media/7SrW2AY3m5CY8/giphy.gif";
   const onSelected = () => {
     props.maxCountSelection
       ? message("You Selected Out Of 10.", "error")
@@ -50,14 +53,13 @@ const Item = props => {
       <span>{description}</span>
     </Tooltip>
   );
-  const imgProps = { width: '250px', height: '250px. '}
-  const borderStyle = props.selected ? { borderColor: " #52c41a"} : null;
+  const borderStyle = props.selected ? { borderColor: " #52c41a" } : null;
   return (
     <Card
       className="card-custom"
       style={borderStyle}
       hoverable={!props.selected}
-      cover={<img alt="Shoulder-Shrugs" src={workout_card} style={imgProps} />}
+      cover={<img alt="Shoulder-Shrugs" src={workout_card} />}
       actions={actions}
     >
       <Meta title={titleWithToolTip} description={discWithToolTip} />

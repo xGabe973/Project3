@@ -1,4 +1,5 @@
 
+@import "~antd/dist/antd.css";
 /* PAGESTYLING */
 body {
  
@@ -9,17 +10,30 @@ body {
 
 .outbutton{
   background-color: #C38D9E;
-  margin-left: 570px;
+  margin-left: 1220px !important ;
 }
 /*navigation*/
 .navbar {
-background-color: #41B3A3;
-
+background-color: rgb(10, 214, 187);
+width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16px;
+  margin-bottom: 10px;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.4);
 }
 
 /*navigation*/
 
 /* welcome */
+
 
 .bgColor {
   background-color: #E8A87C;
@@ -87,10 +101,12 @@ margin-top: -190px;
   
 }
 .workoutsBox {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
   margin-top: 20px;
+  margin-top: 90px;
 }
+
 /*profilepage */
 
 
@@ -103,6 +119,53 @@ margin-top: -190px;
   margin-top: 20px;
   border-radius: 5%;
 }
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.card-custom {
+  width: 180px !important;
+  margin: 12px;
+  padding: 1px;
+}
+.ant-card-cover > * {
+  display: block;
+  width: 100%;
+}
+
+.ant-card-actions > li {
+  margin: 10px !important;
+}
+.ant-btn {
+  margin: auto;
+}
+
+.ant-list {
+  width: 90%;
+  margin: auto;
+}
+
+.ant-list-item-action {
+  padding: 30px 0px;
+}
+
+.anticon-close,
+.anticon-plus {
+  vertical-align: 0.125em !important;
+}
+
+.search-bar-wrapper {
+  width: 60%;
+  margin: auto;
+}
+.search-bar-wrapper > * {
+  margin: 16px;
+}
+
 /* register page */
 
 

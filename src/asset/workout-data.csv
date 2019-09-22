@@ -1,30 +1,30 @@
-Workout,Reps-x-Sets
-Squats,3X5
-Overhead-Press,2X8
-Deadlift,3X5
-Bicep Curl,3X8
-Push-Ups,3X10
-Bench-Press,3X5
-Pull-Ups,5X3
-Lat-Pulldowns,3X8
-Shoulder-Shrugs,3X8
-HangClean-N'Jerk,3X5
-Shoulder-Dips,2X8
-Barbell Lunges,3X8
-Bent Over Row,3X5
-Kettleball-Swings,3X10
-Jog,10-Minutes
-Downward-facing Dog,3X10
-Sitting-Chair,3X10
-Balancing-Table,3X10
-Cobra,3X10
-Cat-Cow,3X10
-Crescent-Moon,3X10
-Foam-Roll,5-Minutes
-Exercise-Bike,10-Minutes
-Burpees,10
-Jumping-Jacks,30
-Air-Squats,3X15
-Plank,1-Minute
-Sit-Up,3X10
-Rest,Forever
+Workout,Reps-x-Sets,url
+Squats,3X5,https://media.giphy.com/media/sL3IOLTSuOdB6/giphy.gif
+Overhead-Press,2X8,https://media.giphy.com/media/34CBAlzWrxGjm/giphy.gif
+Deadlift,3X5,https://media.giphy.com/media/dr7KAthziEq1q/giphy.gif
+Bicep Curl,3X8,https://media.giphy.com/media/jwwTWVISIyeGI/giphy.gif
+Push-Ups,3X10,https://media.giphy.com/media/7YCC7PTNX2TOhJQ6aW/giphy.gif
+Bench-Press,3X5,https://media.giphy.com/media/XfBtsIAbXUJIk/giphy.gif
+Pull-Ups,5X3,https://media.giphy.com/media/2ALcpIRjQFi21eezSI/giphy.gif
+Lat-Pulldowns,3X8,https://media.giphy.com/media/cMEjAw1fOnaFy/giphy.gif
+Incline-Press,3X8,https://media.giphy.com/media/slfOYG2pAOMhi/giphy.gif
+HangClean-N'Jerk,3X5,https://media.giphy.com/media/hi3Xpx4W4nwIg/giphy.gif
+StepUps,2X8,https://media.giphy.com/media/Ya8ubI0Sg2oqA/giphy.gif
+Barbell Lunges,3X8,https://media.giphy.com/media/xT1XGGGg4FTlIOeLOU/giphy.gif
+Bent Over Row,3X5,https://media.giphy.com/media/UUn6oTupFoo0T9g6jS/giphy.gif
+Kettleball-Swings,3X10,https://media.giphy.com/media/3oEjHHYOTZeHjzLLOg/giphy.gif
+Jog,10-Minutes,https://media.giphy.com/media/r1ISdfVnrhOhi/giphy.gif
+Downward-facing Dog,3X10,https://media.giphy.com/media/U5hkjaoCFq3Nm/giphy.gif
+Dragon,3X10,https://media.giphy.com/media/Azw6JZjfrHJ6w/giphy.gif
+Balancing-Table,3X10,https://media.giphy.com/media/qBwqbUTnlIVGw/giphy.gif
+Cobra,3X10,https://media.giphy.com/media/dkuGlKSFIZZV6/giphy.gif
+Cat-Cow,3X10,https://media.giphy.com/media/l1BgRZ8bWp6gfFMn6/giphy.gif
+Crescent-Moon,3X10,https://media.giphy.com/media/erZAZoAZSIl1e/giphy.gif
+Foam-Roll,5-Minutes,https://media.giphy.com/media/NC8HqQvUGgTCg/giphy.gif
+Exercise-Bike,10-Minutes,https://media.giphy.com/media/WgyF59AvA6l44/giphy.gif
+Burpees,10,https://media.giphy.com/media/lEYcevSwZ55Go/giphy.gif
+Jumping-Jacks,30,https://media.giphy.com/media/3ornjHnlfyrQclXGZq/giphy.gif
+Air-Squats,3X15,https://media.giphy.com/media/AWfeFosX36RTW/giphy.gif
+Plank,1-Minute,https://media.giphy.com/media/Pihv2leEf9UKQdloXA/giphy.gif
+Sit-Up,3X10,https://media.giphy.com/media/GZ0FFxQxOlMGY/giphy.gif
+Rest,Forever,https://media.giphy.com/media/bDmK86uwmptio/giphy.gif
