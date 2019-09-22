@@ -169,6 +169,12 @@ margin-top: -190px;
 /* register page */
 
 
+/* favorite heart icon */
+.Dropdown_dropElement__ORYRK {
+  display: flex;
+  flex-flow: column !important;
+}
+
 
 /* workout page */
 
@@ -177,3 +183,9 @@ margin-top: -190px;
 /* nutrition page */
 
 /* nutrition page */
+
+
+.Dropdown_dropElement__ORYRK {
+  display: flex;
+  flex-flow: column !important;
+}
