@@ -3,8 +3,8 @@ import Footer from "../Components/Footer";
 
 import Card from 'react-bootstrap/Card';
 
-const fontSize = {fontSize: '60px', textAlign: 'center', color: '#333',fontWeight: 'bolder', borderRadius: '30%'};
-const tagSize= {fontSize:'40px', textAlign: 'center', color: '#333',fontWeight: 'bolder', borderRadius: '30%'}
+const fontSize = {fontSize: '60px', textAlign: 'center', color: '#333',fontWeight: 'bolder', borderRadius: '10%'};
+const tagSize= {fontSize:'40px', textAlign: 'center', color: '#333',fontWeight: 'bolder', borderRadius: '10%'}
 
 
 
