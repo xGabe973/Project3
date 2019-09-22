@@ -55,6 +55,7 @@ class App extends Component {
                             <Route exact path="/" component={Home} />
                             <Route authenticated={this.props.authenticated} path="/login" component={LogInPage} />
                             <Route path="/register" component={Register} />
+
                             <ProtectedRoute authenticated={this.props.authenticated} path="/nutrition" component={nutrition} />
                             <ProtectedRoute authenticated={this.props.authenticated} path="/workouts" component={workouts} />
                             <ProtectedRoute authenticated={this.props.authenticated} path="/create" component={CreateProfile} />
