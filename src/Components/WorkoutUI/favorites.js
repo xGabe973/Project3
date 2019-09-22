@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Badge, Dropdown } from "flwww";
 import { Icon, Typography } from "antd";
-import Drawer from "./drawer";
-
+//import Drawer from "./drawer";
 import * as actionCreator from "../../Store/action/index";
 
-const { Title, Text } = Typography;
+const { Text } = Typography;
 const styleClearIcon = {
   color: "#e84f34",
   verticalAlign: "0.1em",
@@ -17,11 +16,12 @@ const styleClearIcon = {
   borderRadius: "1rem"
 };
 // Functional Component
-const Header = props => {
+const Favorites = props => {
   const [drawerIsVisible, setDrawer] = useState(false);
   const toggleDrawer = () => {
     setDrawer(!drawerIsVisible);
   };
+
   const maxCountFav = props.countFavWorkout <= 19;
   const badgeColor = {
     color: maxCountFav ? "#006eff" : "#fff",
@@ -54,6 +54,7 @@ const Header = props => {
       })}
     </div>
   );
+
   const nutritionFavList = (
     <div>
       <span>
@@ -77,19 +78,9 @@ const Header = props => {
       })}
     </div>
   );
+
   return (
     <header className="App-header">
-      <Drawer drawerIsVisible={drawerIsVisible} toggleDrawer={toggleDrawer} />
-      <Icon
-        className="Drawer-toggler"
-        type="align-left"
-        onClick={toggleDrawer}
-      />
-      <div className="brand-logo">
-        <Title level={3} style={{ color: "white" }}>
-         NO PAIN NO GAIN APP
-        </Title>
-      </div>
       <div>
         <Dropdown
           elementList={[workoutFavList, nutritionFavList]}
@@ -130,7 +121,8 @@ const mapDispatchToProps = dispatch => {
     onClearNutrition: () => dispatch(actionCreator.clearSelectedNutrition())
   };
 };
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Header);
+)(Favorites);
