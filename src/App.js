@@ -17,6 +17,7 @@ import Nav from 'react-bootstrap/Nav';
 // import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form';
 // import FormControl from 'react-bootstrap/FormControl';
+import Favorites from  "./Components/WorkoutUI/favorites";
 
 
 class App extends Component {
@@ -34,7 +35,7 @@ class App extends Component {
                                 <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
                                 <Nav.Link as={Link} to="/workouts">Workouts </Nav.Link>
                                 <Nav.Link as={Link} to="/nutrition">Nutrition </Nav.Link>
-
+                                <Favorites />
                                 <LogOut />
                               </Nav>
                             </Navbar> 
