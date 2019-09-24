@@ -10,11 +10,11 @@ body {
 
 .outbutton{
   background-color: #C38D9E;
-  margin-left: 1220px !important ;
+  margin-left: 20px !important ;
 }
 /*navigation*/
 .navbar {
-background-color: rgb(10, 214, 187);
+background-color: #41B3A3;
 width: 100%;
   height: 70px;
   display: flex;
