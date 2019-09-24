@@ -39,7 +39,7 @@ class Home extends Component{
                     <Card.Img src="https://www.phhyky.fi/assets/files/2016/11/Syd%C3%A4n-astia.jpeg" alt="hearts"/>
                     <Card.ImgOverlay style={bgColor} >
                         <Card.Title className="bgColor" style={fontSize}>MissionSlimPossible</Card.Title>
-                        <Card.Text style={bgColor} class="tagColor" style={tagSize}>
+                        <Card.Text  className="tagColor" style={tagSize}>
                         The new go to app to help you meet your nutrition goals!<br />
                         <span role="img" aria-label="avacado">🥑 </span>
                         <span role="img" aria-label="broccoli">🥦 </span>

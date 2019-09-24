@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
-import { tsConstructorType } from "@babel/types";
+//import { tsConstructorType } from "@babel/types";
 // import Button from 'react-bootstrap/Button'
 
 const colorHeader = 
@@ -11,37 +11,63 @@ const colorHeader =
 const colorName ={backgroundColor: '#E8A87C', borderRadius: '50%'}
 const cardColor ={backgroundColor: '#ecf8f7'};
 
-class ProfilePage extends Component {
+const User = props => (
+    <div>
+    <h1>{props.user.name}</h1>
+    <h1>{props.user.weight}</h1>
+    <h1>{props.user.feet}'{props.user.inches}</h1>
+    <h1>{props.user.age}</h1>
+    <h1>{props.user.bodyGoal}</h1>
+
+    <Link to={"/edit/" + props.user._id}>Edit</Link>
+
+    </div>
+)
+export default class ProfilePage extends Component {
 
     constructor(props) {
         super(props);
         this.state = {users:[]};
     };
+
     componenetDidMount() {
-        axios.get('http://localhost:4000/todos/')
+        axios.get('http://localhost:4000/users/')
         .then(response => {
-            this.setState({ users: response.data})
+            this.setState({ users: response.data })
         })
         .catch(function (error){
             console.log(error);
+        });
+    };
+
+    compileUser() {
+        return this.state.users.map(function(currentUser, i) {
+            return <User user={currentUser} key={i} />
         })
     }
+
+    //user() {
+      //  return this.state.users.map(function(currentUser, i) {
+        //    return <User user={currentUser} key={i} />;
+   //     });
+   // }
     render() {
         return (
             
-            <div>
-               
+            
+              <div> 
                <Card  style={colorName} className="nameBox">
-                    <Card.Body  >Hi, {this.user.userName} !</Card.Body>
+                    <Card.Body  >Hi, {this.compileUser()} !</Card.Body>
                </Card>
                 
                <Card className="statsBox">
                 <Card.Header style={colorHeader} className="cardHeader">Stats</Card.Header>
                 <Card.Body style={cardColor}>
                     <Card.Text>
-                    Weight:<br />
-                    Height: <br />
-                    Age:
+                    Weight: {this.props.weight} <br />
+                    Height: {this.props.feet}'{this.props.inches} <br />
+                    BMI: {this.props.bmi} <br />
+                    Age: {this.props.age}
                     </Card.Text>
                 </Card.Body>
                 </Card>
@@ -50,7 +76,7 @@ class ProfilePage extends Component {
                 <Card.Header style={colorHeader} className="cardHeader">Diet</Card.Header>
                 <Card.Body style={cardColor}>
                     <Card.Text>
-                    You chose to: CUT/BULK/MAINTAIN
+                    You chose to: {}
                     </Card.Text>
                 </Card.Body>
                 </Card>
@@ -59,7 +85,7 @@ class ProfilePage extends Component {
                 <Card.Header style={colorHeader} className="cardHeader">Nutrition</Card.Header>
                 <Card.Body style={cardColor}>
                     <Card.Text>
-                   dsfsdfsdfsdfsdf
+                   dsf
                     </Card.Text>
                 </Card.Body>
                 </Card>
@@ -73,18 +99,19 @@ class ProfilePage extends Component {
                     </Card.Text>
                 </Card.Body>
                 </Card>
+                <br></br>
+                <Link to="/edit"> Edit your Profile Stats</Link>
+                
+                <br></br>
+
                 <Link to="/">←Back to log in page</Link>
 
-
-
                 <Footer />
-
-            </div>
-           
+                
+                </div>
+        
             
 
         )
     }
 }
-
-export default ProfilePage

@@ -1,11 +1,13 @@
 const express = require("express");
-const bodyParser = require('body-parser');
-const mongoose = require("mongoose");
 const app = express();
-const PORT = process.env.PORT || 3001;
+const bodyParser = require('body-parser');
 const cors = require('cors');
-let User = require('./models/user');
+const mongoose = require("mongoose");
 const userRoutes = express.Router();
+const PORT = process.env.PORT || 4000;
+
+let User = require('./models/user');
+
 // Define middleware here
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -21,12 +23,12 @@ app.use(bodyParser.json({
 }))
 
 // Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+//if (process.env.NODE_ENV === "production") {
+//  app.use(express.static("client/build"));
+//}
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/project3", {
     useNewUrlParser: true
 });
 const connection = mongoose.connection;
@@ -42,16 +44,27 @@ userRoutes.route('/').get(function(req, res) {
         if (err) {
            return console.log(err);
         } else {
-           return res.json(users)
+           return res.json(users);
         }
     });
 });
 
 userRoutes.route('/:id').get(function(req, res) {
     let id = req.params.id;
-    User.FindById(id, function(err, user) {
+    User.findById(id, function(err, user) {
         res.json(user);
     });
+});
+
+userRoutes.route('/add').post(function(req, res) {
+    let user = new User(req.body);
+    user.save()
+    .then(user => {
+        res.status(200).json({'user': 'user added successfully'});
+    })
+    .catch(err => {
+        res.status(400).send('adding new user failed');
+});
 });
 
 userRoutes.route('/update/:id').post(function(req, res) {
@@ -65,26 +78,15 @@ userRoutes.route('/update/:id').post(function(req, res) {
         user.bodyGoal =req.body.bodyGoal;
 
         user.save().then(user => {
-            res.json("User Updated Info");
+            res.json("User Updated stats");
         })
         .catch(err => {
-            res.status(400).send("update not possible");
+            res.status(400).send("update failed");
         });
     });
 });
 
-userRoutes.route('/add').post(function(req, res) {
-    let user = new User (req.body);
-    user.save()
-    .then(user => {
-        res.status(200).json({'user': 'user added successfully'});
-    })
-    .catch(err => {
-        res.status(400).send('adding new user failed');
-});
-});
-
-app.use('.users', userRoutes);
+app.use('/users', userRoutes);
 
 // Start the API server
 app.listen(PORT, function() {

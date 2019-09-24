@@ -4,7 +4,7 @@ import Home from "./Pages/Home";
 import Register from "./Pages/Register";
 import ProtectedRoute from "./ProtectedRoute";
 import LogOut from "./Pages/LogOut";
-import CreateProfile from "./Pages/CreateProfile";
+import EditProfile from "./Pages/editProfile";
 import ProfilePage from "./Pages/ProfilePage"
 import LogInPage from "./Pages/LogInPage";
 import nutrition from "./Pages/nutrition";
@@ -58,7 +58,7 @@ class App extends Component {
                             <Route path="/register" component={Register} />
                             <ProtectedRoute authenticated={this.props.authenticated} path="/nutrition" component={nutrition} />
                             <ProtectedRoute authenticated={this.props.authenticated} path="/workouts" component={workouts} />
-                            <ProtectedRoute authenticated={this.props.authenticated} path="/create" component={CreateProfile} />
+                            <ProtectedRoute authenticated={this.props.authenticated} path="/edit" component={EditProfile} />
                             <ProtectedRoute authenticated={this.props.authenticated} path="/profile" component={ProfilePage} />
                                
                         </Switch>
