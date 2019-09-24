@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const userRoutes = express.Router();
 const PORT = process.env.PORT || 4000;
 
-let User = require('./models/user');
+require('./models/user');
 
 // Define middleware here
 app.use(cors());
@@ -22,12 +22,18 @@ app.use(bodyParser.json({
     parameterLimit: 100000
 }))
 
-// Serve up static assets (usually on heroku)
-//if (process.env.NODE_ENV === "production") {
-//  app.use(express.static("client/build"));
-//}
+//Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+const path = require('path');
+app.get('*', (req,res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+})
 
 // Connect to the Mongo DB
+mongoose.Promise=global.Promise;
 mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/project3", {
     useNewUrlParser: true
 });
@@ -38,7 +44,7 @@ connection.once('open', function() {
 });
 
 // Add routes, both API and view\
-
+/*
 userRoutes.route('/').get(function(req, res) {
     User.find(function(err, users) {
         if (err) {
@@ -85,9 +91,9 @@ userRoutes.route('/update/:id').post(function(req, res) {
         });
     });
 });
-
+*/
 app.use('/users', userRoutes);
-
+require('./routes/userRoutes')(app);
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
