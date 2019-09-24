@@ -53,7 +53,7 @@ class SearchBoxComp extends React.Component {
     const { tags, inputVisible, inputValue } = this.state;
     return (
       <div className="search-bar-wrapper">
-        <h3>Search Your Favourite Recipe</h3>
+        <h3>Search Your Favorite Recipe</h3>
         <div>
           <Search
             placeholder="Search Your Favorite Recipe"

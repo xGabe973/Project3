@@ -52,7 +52,7 @@ const NutritionList = props => {
               avatar={
                 <Avatar
                   shape="square"
-                  size={64}
+                  size={150}
                   src={thumbnail.length > 0 ? thumbnail : defaultThumbnail}
                 />
               }
