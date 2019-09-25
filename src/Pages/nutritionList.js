@@ -29,7 +29,7 @@ const NutritionList = props => {
         if (checkSelected) {
           actions.push(
             <Icon
-              style={{ margin: "0px", padding: "16px 0" }}
+              style={{ fontSize: "40px", margin: "0", padding: "22px 0", backgroundColor: 'white' }}
               type="check-circle"
               theme="twoTone"
               twoToneColor="#52c41a"
@@ -39,7 +39,7 @@ const NutritionList = props => {
         } else {
           actions.push(
             <Icon
-              style={{ margin: "0", padding: "22px 0" }}
+              style={{ fontSize: "30px", margin: "0", padding: "22px 0", backgroundColor: 'white' }}
               type="check"
               key="check-1"
               onClick={onSelected}
@@ -52,7 +52,7 @@ const NutritionList = props => {
               avatar={
                 <Avatar
                   shape="square"
-                  size={64}
+                  size={150}
                   src={thumbnail.length > 0 ? thumbnail : defaultThumbnail}
                 />
               }
@@ -61,7 +61,7 @@ const NutritionList = props => {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{ color: "#1890ff" }}
+                  style={{ fontSize: "30px", backgroundColor: "white", color: "#1890ff" }}
                 >
                   {title.trim()}
                 </a>

@@ -25,7 +25,7 @@ const Item = props => {
   if (selected) {
     actions.push(
       <Icon
-        style={{ margin: "0px", padding: "12px 0" }}
+        style={{ fontSize: "40px", margin: "0px", padding: "12px 0" }}
         type="check-circle"
         theme="twoTone"
         twoToneColor="#52c41a"
@@ -35,7 +35,7 @@ const Item = props => {
   } else {
     actions.push(
       <Icon
-        style={{ margin: "0px", padding: "12px 0" }}
+        style={{fontSize: "30px", margin: "0px", padding: "12px 0" }}
         type="check"
         key="check-1"
         onClick={onSelected}

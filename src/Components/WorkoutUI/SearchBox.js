@@ -53,7 +53,7 @@ class SearchBoxComp extends React.Component {
     const { tags, inputVisible, inputValue } = this.state;
     return (
       <div className="search-bar-wrapper">
-        <h3>Search Your Favourite Recipe</h3>
+        <h3>Search Your Favorite Recipe</h3>
         <div>
           <Search
             placeholder="Search Your Favorite Recipe"
@@ -63,7 +63,7 @@ class SearchBoxComp extends React.Component {
           />
         </div>
         <div>
-          <div style={{ margin: "8px" }}>
+          <div style={{ fontSize: "20px", backgroundColor: "white", margin: "8px" }}>
             <Text type="warning">Add Ingredients by tag</Text>
           </div>
           {tags.map((tag, index) => {
