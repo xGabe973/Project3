@@ -1,68 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is SlimPossible! And was designed for everyone in mind and those who want to improve their health and overall wellness.  SlimPossible addresses both the fitness and nutrition lifestyle by asking questions about you and personalizing a workout and recipe guide whether you want to slim down, maintain, or bulk up.
 
-## Available Scripts
+Screen 1 is the welcome screen and registration/login page.  
 
-In the project directory, you can run:
+For previous users the user will login with an email address and password using protected routes to access their account.  
+For first time users, they will be asked for general information about themselves including gender, height, weight, and preference towards their fitness preferences.
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The Exercise page where users can select up to 10 of their favorite workouts and stretches to utilize to get their heart rate up and burn calories and increase flexibility. Included are Gifs of each exercise or stretch so the user knows the correct form to practice during their workout.  The mount of sets X reps is also listed and can be changed depending on the users' fitness level.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The Nutrition page is where the user can select up to ten of their favorite recipes using the Recipe Puppy API database.  Nearly every recipe you can think of is listed here and the recipe information will be revealed clicking on the recipe name. Choose ten of your favorite recipes for saving later. Hint:  Choose a tag like "healthy" or "vegetarian" to narrow down searches even more depending on your nutritional needs.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The Profile page is where the user can look at their overall profile that displays their favorite workouts, meals, and their general physical stats.  The user can delete or add workouts and recipes as many times as they'd like depending on if their physical goals change.
