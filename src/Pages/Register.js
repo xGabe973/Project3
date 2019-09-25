@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import firebase from "../firebase";
 import Form from 'react-bootstrap/Form'
 
@@ -68,7 +68,7 @@ class Register extends Component {
 
             </div>
 
-            <Link to="/">← Back to Log In Page</Link>
+            {/*<Link to="/">← Back to Log In Page</Link>*/}
         </div>
         );
     };

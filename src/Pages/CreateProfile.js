@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 class CreateProfile extends Component {
     state = {
@@ -51,7 +51,7 @@ render() {
                     </div>
                 </form>
             </div>
-            <Link to="/">← Back to Log In Page</Link>
+            {/*<Link to="/">← Back to Log In Page</Link>*/}
 
         </div>
     )

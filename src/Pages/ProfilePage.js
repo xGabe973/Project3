@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Card from 'react-bootstrap/Card'
 // import Button from 'react-bootstrap/Button'
@@ -58,7 +58,7 @@ class ProfilePage extends Component {
                     </Card.Text>
                 </Card.Body>
                 </Card>
-                <Link to="/">←Back to log in page</Link>
+                {/*<Link to="/">←Back to log in page</Link>*/}
 
 
 
