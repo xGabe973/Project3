@@ -5,8 +5,10 @@ const cors = require('cors');
 const mongoose = require("mongoose");
 const userRoutes = express.Router();
 const PORT = process.env.PORT || 4000;
+// const proxy = require('http-proxy-middleware');
+let User = require('./models/user');
 
-require('./models/user');
+// app.use(proxy('/api/*', { target: 'http://localhost:4000' }));
 
 // Define middleware here
 app.use(cors());
@@ -27,10 +29,6 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-const path = require('path');
-app.get('*', (req,res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-})
 
 // Connect to the Mongo DB
 mongoose.Promise=global.Promise;
@@ -43,8 +41,11 @@ connection.once('open', function() {
     console.log("MongoDB database connection established");
 });
 
-// Add routes, both API and view\
-/*
+userRoutes.use(function(req, res, next) {
+    console.log('hello');
+    next()
+});
+// Add routes, both API and view
 userRoutes.route('/').get(function(req, res) {
     User.find(function(err, users) {
         if (err) {
@@ -63,14 +64,16 @@ userRoutes.route('/:id').get(function(req, res) {
 });
 
 userRoutes.route('/add').post(function(req, res) {
+    console.log(req.body)
     let user = new User(req.body);
     user.save()
     .then(user => {
         res.status(200).json({'user': 'user added successfully'});
     })
     .catch(err => {
+        console.log(err);
         res.status(400).send('adding new user failed');
-});
+    });
 });
 
 userRoutes.route('/update/:id').post(function(req, res) {
@@ -79,7 +82,8 @@ userRoutes.route('/update/:id').post(function(req, res) {
         res.status(404).send("data is not found");
         else
         user.weight =req.body.weight;
-        user.height =req.body.height;
+        user.feet =req.body.feet;
+        user.inches = req.body.inches;
         user.age =req.body.age;
         user.bodyGoal =req.body.bodyGoal;
 
@@ -91,9 +95,9 @@ userRoutes.route('/update/:id').post(function(req, res) {
         });
     });
 });
-*/
+
 app.use('/users', userRoutes);
-require('./routes/userRoutes')(app);
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);

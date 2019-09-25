@@ -27,24 +27,34 @@ export default class ProfilePage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {users:[]};
+        console.log(props.match.params.uid);
+        this.state = {
+            user: {},
+            uid: ''
+        };
     };
 
-    componenetDidMount() {
-        axios.get('http://localhost:4000/users/')
+    componentDidMount() {
+        axios.get('/users/')
         .then(response => {
-            this.setState({ users: response.data })
+            const user = response.data.find((user) => user.uid === this.props.match.params.uid) ||
+            {
+                name: 'davidTest',
+                email: 'email@test.com'
+            }
+            console.log('huh', user);
+            this.setState({ user: user })
         })
         .catch(function (error){
             console.log(error);
         });
     };
 
-    compileUser() {
-        return this.state.users.map(function(currentUser, i) {
-            return <User user={currentUser} key={i} />
-        })
-    }
+   // compileUser() {
+        // return this.state.users.map(function(currentUser, i) {
+        //     return <User user={currentUser} key={i} />
+        // })
+   // }
 
     //user() {
       //  return this.state.users.map(function(currentUser, i) {
@@ -53,65 +63,67 @@ export default class ProfilePage extends Component {
    // }
     render() {
         return (
+         
             
             
               <div> 
-               <Card  style={colorName} className="nameBox">
-                    <Card.Body  >Hi, {this.compileUser()} !</Card.Body>
-               </Card>
+                <Card  style={colorName} className="nameBox">
+                     <Card.Body  >Hi, {this.User} !</Card.Body>
+                </Card>
                 
-               <Card className="statsBox">
-                <Card.Header style={colorHeader} className="cardHeader">Stats</Card.Header>
-                <Card.Body style={cardColor}>
-                    <Card.Text>
-                    Weight: {this.props.weight} <br />
-                    Height: {this.props.feet}'{this.props.inches} <br />
-                    BMI: {this.props.bmi} <br />
-                    Age: {this.props.age}
-                    </Card.Text>
-                </Card.Body>
-                </Card>
+                <Card className="statsBox">
+                 <Card.Header style={colorHeader} className="cardHeader">Stats</Card.Header>
+                 <Card.Body style={cardColor}>
+                     <Card.Text>
+                     Weight: {this.props.weight} <br />
+                     Height: {this.props.feet}'{this.props.inches} <br />
+                     BMI: {this.props.bmi} <br />
+                     Age: {this.props.age}
+                     </Card.Text>
+                 </Card.Body>
+            </Card>
 
-                <Card className="dietBox">
-                <Card.Header style={colorHeader} className="cardHeader">Diet</Card.Header>
-                <Card.Body style={cardColor}>
-                    <Card.Text>
-                    You chose to: {}
-                    </Card.Text>
-                </Card.Body>
-                </Card>
+            
+                 <Card className="dietBox">
+                 <Card.Header style={colorHeader} className="cardHeader">Diet</Card.Header>
+                 <Card.Body style={cardColor}>
+                     <Card.Text>
+                     You chose to: {}
+                     </Card.Text>
+                 </Card.Body>
+                 </Card>
               
-                <Card className="nutritionBox">
-                <Card.Header style={colorHeader} className="cardHeader">Nutrition</Card.Header>
-                <Card.Body style={cardColor}>
-                    <Card.Text>
-                   dsf
-                    </Card.Text>
-                </Card.Body>
-                </Card>
+                 <Card className="nutritionBox">
+                 <Card.Header style={colorHeader} className="cardHeader">Nutrition</Card.Header>
+                 <Card.Body style={cardColor}>
+                     <Card.Text>
+                    dsf
+                     </Card.Text>
+                 </Card.Body>
+                 </Card>
 
                 
-                <Card className="workoutsBox">
-                <Card.Header style={colorHeader} className="cardHeader">Workouts</Card.Header>
-                <Card.Body style={cardColor}>
-                    <Card.Text>
-                   fsfdfgsfsdf
-                    </Card.Text>
-                </Card.Body>
-                </Card>
-                <br></br>
-                <Link to="/edit"> Edit your Profile Stats</Link>
+                 <Card className="workoutsBox">
+                 <Card.Header style={colorHeader} className="cardHeader">Workouts</Card.Header>
+                 <Card.Body style={cardColor}>
+                     <Card.Text>
+                        fsfdfgsfsdf
+                     </Card.Text>
+                 </Card.Body>
+                 </Card>
+                 <br></br>
+                 <Link to="/edit"> Edit your Profile Stats</Link>
                 
-                <br></br>
+                 <br></br>
 
-                <Link to="/">←Back to log in page</Link>
+                 <Link to="/">←Back to log in page</Link>
 
-                <Footer />
+                 <Footer />
                 
-                </div>
+                 </div>
         
             
-
         )
+        
     }
 }

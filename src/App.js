@@ -20,6 +20,7 @@ import Nav from 'react-bootstrap/Nav';
 
 class App extends Component {
     render() {
+      console.log(this.props);
         return (
             <Router>
                 <div>
@@ -31,7 +32,7 @@ class App extends Component {
                             <Navbar >
                               <Navbar.Brand href="/">MissionSlimPossible</Navbar.Brand>
                               <Nav className="mr-auto">
-                                <NavLink to="/profile">Profile</NavLink>
+                                <NavLink to={`/profile/${this.props.uid}`}>Profile</NavLink>
                                 <NavLink to="/workouts">Workouts </NavLink>
                                 <NavLink to="/nutrition">Nutrition </NavLink>
 
@@ -59,7 +60,7 @@ class App extends Component {
                             <ProtectedRoute authenticated={this.props.authenticated} path="/nutrition" component={nutrition} />
                             <ProtectedRoute authenticated={this.props.authenticated} path="/workouts" component={workouts} />
                             <ProtectedRoute authenticated={this.props.authenticated} path="/edit" component={EditProfile} />
-                            <ProtectedRoute authenticated={this.props.authenticated} path="/profile" component={ProfilePage} />
+                            <ProtectedRoute authenticated={this.props.authenticated} path="/profile/:uid" component={ProfilePage} />
                                
                         </Switch>
                     </Wrapper>

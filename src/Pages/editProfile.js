@@ -21,7 +21,8 @@ export default class EditProfile extends Component {
         this.state = {
             name: '',
             weight: '',
-            height: '',
+            feet: '',
+            inches: '',
             age: '',
             bodyGoal: '',
             bmi: ''
@@ -33,7 +34,8 @@ export default class EditProfile extends Component {
         name: "",
         //password: "",
         weight: "",
-        height: "",
+        feet: "",
+        inches: "",
         age: "",
         bodyGoal: "",
         bmi: ''
@@ -45,7 +47,8 @@ export default class EditProfile extends Component {
                 this.setState({
                     name: '',
                     weight: '',
-                    height: '',
+                    feet: '',
+                    inches: '',
                     age: '',
                     bodyGoal: '',
                     bmi: ''
@@ -71,7 +74,8 @@ export default class EditProfile extends Component {
         event.preventDefault();
         const obj = {
             weight: this.state.weight,
-            height: this.state.height,
+            feet: this.state.feet,
+            inches: this.state.inches,
             age: this.state.age,
             bodyGoal: this.state.bodyGoal,
             bmi: this.state.bmi

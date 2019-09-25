@@ -9,14 +9,16 @@ export default class Register extends Component {
 
     constructor(props) {
         super(props);
-
+        let id = props.uid;
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.blur = this.blur.bind(this);
         this.calculateBMI = this.calculateBMI.bind(this);
 
         this.state = {
+            id: '',
             email: '',
+            uid: '',
             name: '',
             weight: '',
             feet: '',
@@ -27,6 +29,7 @@ export default class Register extends Component {
     }
 
     state = {
+        id: '',
         email: "",
         password: "",
         name: "",
@@ -49,6 +52,7 @@ export default class Register extends Component {
             return;
         }
         console.log(`Form Submitted:`);
+        console.log(`id: ${this.state.id}`);
         console.log(`email: ${this.state.email}`);
         console.log(`name: ${this.state.name}`);
         console.log(`height: ${this.state.feet}'${this.state.inches}`);
@@ -58,6 +62,7 @@ export default class Register extends Component {
         alert(`Welcome ${this.state.name}`);
 
         const newUser = {
+            id: this.state.id,
             email: this.state.email,
             name: this.state.name,
             feet: this.state.feet,
@@ -67,10 +72,12 @@ export default class Register extends Component {
             bodyGoal: this.state.bodyGoal
         };
 
-        axios.post('http://localhost4000:/users/add', newUser)
+        axios.post('/users/add', newUser)
             .then(res => console.log(res.data));
+            
 
         this.setState({
+            id: '',
             email: '',
             name: '',
             feet: '',
@@ -102,6 +109,7 @@ export default class Register extends Component {
             },
         }).then(res => res.json())
             .then(data => console.log(data));
+        
     };
 
     blur(e) {
@@ -218,7 +226,7 @@ export default class Register extends Component {
    */
 
     render() {
-        const { email, password, name, weight, feet, inches, age, bodyGoal, error } = this.state;
+        const { id, email, password, name, weight, feet, inches, age, bodyGoal, error } = this.state;
         return (
             <div class="container">
                 <div class="card-body registerForm">
