@@ -1,6 +1,6 @@
 This app is SlimPossible! And was designed for everyone in mind and those who want to improve their health and overall wellness.  SlimPossible addresses both the fitness and nutrition lifestyle by asking questions about you and personalizing a workout and recipe guide whether you want to slim down, maintain, or bulk up.
 
-(https://github.com/xGabe973/Project3/blob/luke2/src/asset/ReadMeimages/splashscrn.PNG)
+[solarized dualmode]((https://github.com/xGabe973/Project3/blob/luke2/src/asset/ReadMeimages/splashscrn.PNG)]
 Screen 1 is the welcome screen and registration/login page.  
 
 (https://github.com/xGabe973/Project3/blob/luke2/src/asset/ReadMeimages/login.PNG)
