@@ -63,7 +63,7 @@ class SearchBoxComp extends React.Component {
           />
         </div>
         <div>
-          <div style={{ margin: "8px" }}>
+          <div style={{ fontSize: "20px", backgroundColor: "white", margin: "8px" }}>
             <Text type="warning">Add Ingredients by tag</Text>
           </div>
           {tags.map((tag, index) => {
