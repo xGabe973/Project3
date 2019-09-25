@@ -35,12 +35,20 @@ width: 100%;
 /* welcome */
 
 
-.bgColor {
+/* .bgColor {
   background-color: #E8A87C;
   width: 65%;
 }
 .tagColor {
   background-color: #E8A87C;
+  margin-top: -550px;
+} */
+
+.logo {
+  width:100%;
+  margin-top: -250px;
+  margin-left: 100px;
+ 
 }
 /* welcome */
 
