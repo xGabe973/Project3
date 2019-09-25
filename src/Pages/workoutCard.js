@@ -5,13 +5,13 @@ import { Card, Icon, Tooltip } from "antd";
 
 import * as actionCreator from "../Store/action/index";
 // import workout_card from "../asset/workout_card.svg";
+
 const { Meta } = Card;
 
 const Item = props => {
   const { title, description, id, selected, url } = props;
   const workout_card = url
-  ? url
-  : "https://media.giphy.com/media/7SrW2AY3m5CY8/giphy.gif";
+
   const onSelected = () => {
     props.maxCountSelection
       ? message("You Selected Out Of 10.", "error")
@@ -24,7 +24,7 @@ const Item = props => {
   if (selected) {
     actions.push(
       <Icon
-        style={{ margin: "0px", padding: "12px 0" }}
+        style={{ fontSize: "40px", margin: "0px", padding: "12px 0" }}
         type="check-circle"
         theme="twoTone"
         twoToneColor="#52c41a"
@@ -34,7 +34,7 @@ const Item = props => {
   } else {
     actions.push(
       <Icon
-        style={{ margin: "0px", padding: "12px 0" }}
+        style={{fontSize: "30px", margin: "0px", padding: "12px 0" }}
         type="check"
         key="check-1"
         onClick={onSelected}

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actionCreator from "../Store/action/index";
 
-import { Button, Icon } from "antd";
+//import { Button, Icon } from "antd";
 import WorkoutCard from "./workoutCard";
 import Spinner from "../Components/WorkoutUI/Spinner/Spinner";
 
@@ -41,15 +41,7 @@ class Workouts extends Component {
     return (
       <div className="Container-wrapper">
         <div className="Container">{workoutList}</div>
-        <Button
-          type="primary"
-          shape="round"
-          size="large"
-          onClick={() => this.props.history.push("/nutrition")}
-        >
-          Nutrition
-          <Icon type="swap-right" />
-        </Button>
+        
       </div>
     );
   }
