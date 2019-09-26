@@ -16,12 +16,12 @@ class Home extends Component{
              
 
                 <Card >
+
                     <Card.Img src="https://www.phhyky.fi/assets/files/2016/11/Syd%C3%A4n-astia.jpeg" alt="Fruits and Vegtables in heart containers"/>
                     <Card.ImgOverlay  >
                     <Card.Img  className='logo' src={Logo} />
                         {/* <Card.Title className="bgColor" style={fontSize}>MissionSlimPossible</Card.Title> */}
                        
-
                     </Card.ImgOverlay>
                     
                     </Card>
