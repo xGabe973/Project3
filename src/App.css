@@ -127,7 +127,52 @@ margin-top: -190px;
   margin-top: 20px;
   border-radius: 5%;
 }
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
 
+.card-custom {
+  width: 180px !important;
+  margin: 12px;
+  padding: 1px;
+}
+.ant-card-cover > * {
+  display: block;
+  width: 100%;
+}
+
+.ant-card-actions > li {
+  margin: 10px !important;
+}
+.ant-btn {
+  margin: auto;
+}
+
+.ant-list {
+  width: 90%;
+  margin: auto;
+}
+
+.ant-list-item-action {
+  padding: 30px 0px;
+}
+
+.anticon-close,
+.anticon-plus {
+  vertical-align: 0.125em !important;
+}
+
+.search-bar-wrapper {
+  width: 60%;
+  margin: auto;
+}
+.search-bar-wrapper > * {
+  margin: 16px;
+}
 
 /* register page */
 

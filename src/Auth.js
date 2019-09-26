@@ -3,31 +3,25 @@ import App from "./App";
 import firebase from "./firebase";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default class Auth extends Component{
+class Auth extends Component{
     state = {
         authenticated: false,
-        uid: ''
       };
       componentDidMount() {
-        console.log('user?', this.state.authenticated);
-        let uid = this.props.uid;
-        console.log('eureka',uid);
-        firebase.auth().onAuthStateChanged((authenticated, ...rest) => {
+        console.log(this.state.authenticated);
+        firebase.auth().onAuthStateChanged((authenticated) => {
           authenticated
-            ? 
-            this.setState(() => ({
+            ? this.setState(() => ({
               authenticated: true,
-              uid: authenticated.uid
             }))
             : this.setState(() => ({
-              authenticated: false,
-              uid: ""
+              authenticated: false
             }))
         })
       }
       render() {
-        return <App authenticated={this.state.authenticated} uid={this.state.uid} />
+        return <App authenticated={this.state.authenticated}/>
     }
 }
 
-//export default Auth;
+export default Auth;

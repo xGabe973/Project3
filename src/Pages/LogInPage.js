@@ -3,13 +3,11 @@ import React, { Component } from "react";
 // import Footer from "../Components/Footer";
 import { withRouter } from "react-router-dom";
 import firebase from "../firebase";
-import ProtectedRoute from '../ProtectedRoute';
 
 
 class LogInPage extends Component{
 
 state = {
-    uid: '',
     email: "",
     password: "",
     error: null,
@@ -27,8 +25,7 @@ state = {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then((user) => {
-        let uid= user.uid;
-        console.log("info?", user);
+        console.log(user);
         this.props.history.push('/');
       })
       .catch((error) => {
