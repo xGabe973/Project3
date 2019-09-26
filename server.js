@@ -5,8 +5,10 @@ const cors = require('cors');
 const mongoose = require("mongoose");
 const userRoutes = express.Router();
 const PORT = process.env.PORT || 4000;
+const path = require('path');
+const passport = require('passport');
 // const proxy = require('http-proxy-middleware');
-let User = require('./models/user');
+let users = require('./routes/api/users');
 
 // app.use(proxy('/api/*', { target: 'http://localhost:4000' }));
 
@@ -15,15 +17,12 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({
-    extended: true,
-    limit: '50mb',
-    parameterLimit: 100000
+    extended: false
 }))
-app.use(bodyParser.json({
-    limit: '50mb',
-    parameterLimit: 100000
-}))
-
+app.use(bodyParser.json({}))
+app.use(passport.initialize());
+require("./config/passport")(passport);
+app.use("/api/users", users);
 //Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
@@ -40,6 +39,8 @@ const connection = mongoose.connection;
 connection.once('open', function() {
     console.log("MongoDB database connection established");
 });
+
+
 
 userRoutes.use(function(req, res, next) {
     console.log('hello');
@@ -96,7 +97,6 @@ userRoutes.route('/update/:id').post(function(req, res) {
     });
 });
 
-app.use('/users', userRoutes);
 
 // Start the API server
 app.listen(PORT, function() {
