@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import * as actionCreator from "../Store/action/index";
 
-import { Button, Icon } from "antd";
+//import { Button, Icon } from "antd";
 import WorkoutCard from "./workoutCard";
 import Spinner from "../Components/WorkoutUI/Spinner/Spinner";
 
@@ -21,7 +21,7 @@ class Workouts extends Component {
     if (!this.props.loading && !this.state.loading && workouts) {
       // WORKOUT-List: array of ReactNode single workout
       workoutList = workouts.map((obj, index) => {
-        const { id, Workout } = obj;
+        const { id, Workout, url } = obj;
         const Reps_x_Sets = obj["Reps-x-Sets"];
         const foundSelected = selectedWorkouts.find(obj => obj.id === id);
         const checkSelected = foundSelected ? true : false;
@@ -31,6 +31,7 @@ class Workouts extends Component {
             title={Workout}
             description={Reps_x_Sets}
             id={id}
+            url={url}
             selected={checkSelected}
           />
         );
@@ -40,15 +41,7 @@ class Workouts extends Component {
     return (
       <div className="Container-wrapper">
         <div className="Container">{workoutList}</div>
-        <Button
-          type="primary"
-          shape="round"
-          size="large"
-          onClick={() => this.props.history.push("/nutrition")}
-        >
-          Nutrition
-          <Icon type="swap-right" />
-        </Button>
+        
       </div>
     );
   }

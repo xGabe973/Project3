@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
@@ -130,6 +130,7 @@ export default class ProfilePage extends Component {
                  </Card>
 
                 
+
                  <Card className="workoutsBox">
                  <Card.Header style={colorHeader} className="cardHeader">Workouts</Card.Header>
                  <Card.Body style={cardColor}>
@@ -142,6 +143,7 @@ export default class ProfilePage extends Component {
                  <Link to="/edit"> Edit your Profile Stats</Link>
                 
                  <br></br>
+
 
                  <Link to="/">←Back to log in page</Link>
 

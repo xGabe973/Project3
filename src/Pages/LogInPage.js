@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 // import Footer from "../Components/Footer";
 import { withRouter } from "react-router-dom";
 import firebase from "../firebase";
@@ -60,7 +60,7 @@ state = {
                   <button type="submit" class="btn btn-primary" children="Log In">Log In</button>
               </form>
           </div>
-          <Link to="/">← HOME </Link>
+          {/*<Link to="/">← HOME </Link>*/}
         {/* <Footer />   */}
         </div>
 
