@@ -9,27 +9,28 @@ export default class Register extends Component {
 
     constructor(props) {
         super(props);
-        let id = props.uid;
+        let uid = this.props.uid;
+        console.log('register props', uid);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.blur = this.blur.bind(this);
         this.calculateBMI = this.calculateBMI.bind(this);
 
         this.state = {
-            id: '',
-            email: '',
             uid: '',
+            email: '',
             name: '',
             weight: '',
             feet: '',
             inches: '',
             age: '',
+            bmi: '',
             bodyGoal: ''
         }
     }
 
     state = {
-        id: '',
+        uid: '',
         email: "",
         password: "",
         name: "",
@@ -38,6 +39,7 @@ export default class Register extends Component {
         inches: "",
         age: "",
         bodyGoal: "",
+        bmi: '',
         error: null
     };
 
@@ -45,78 +47,85 @@ export default class Register extends Component {
         this.setState({ [event.target.name]: event.target.value });
     };
 
-    handleSubmit = (event) => {
+    handleSubmit = (event, props) => {
         event.preventDefault();
-        if (!event.target.checkValidity()) {
-            //form is invalid! so we do nothing
-            return;
-        }
-        console.log(`Form Submitted:`);
-        console.log(`id: ${this.state.id}`);
-        console.log(`email: ${this.state.email}`);
-        console.log(`name: ${this.state.name}`);
-        console.log(`height: ${this.state.feet}'${this.state.inches}`);
-        console.log(`weight: ${this.state.weight}`);
-        console.log(`age: ${this.state.age}`);
-        console.log(`BodyGoal: ${this.state.bodyGoal}`);
-        alert(`Welcome ${this.state.name}`);
+        console.log("User info", this.state.uid, this.state.email, this.state.password,
+        this.state.name, this.state.feet, this.state.inches, this.state.age,
+        this.state.bodyGoal, this.state.bmi);
+        
+        var self = this;
 
-        const newUser = {
-            id: this.state.id,
-            email: this.state.email,
-            name: this.state.name,
-            feet: this.state.feet,
-            inches: this.state.inches,
-            weight: this.state.weight,
-            age: this.state.age,
-            bodyGoal: this.state.bodyGoal
-        };
-
-        axios.post('/users/add', newUser)
-            .then(res => console.log(res.data));
-            
-
-        this.setState({
-            id: '',
-            email: '',
-            name: '',
-            feet: '',
-            inches: '',
-            weight: '',
-            age: '',
-            bodyGoal: ''
-        });
-
-        const { email, password } = this.state;
-        let databody = {
-            "email": this.state.email
-        }
+        const { email, password, uid } = this.state;
+            let databody = {
+                "email": this.state.email,
+                'uid': this.state.uid
+            }
 
         firebase
             .auth()
             .createUserWithEmailAndPassword(email, password)
             .then((user) => {
+                console.log('user:', user);
+                let uid = user.user.uid;
+                console.log('uid registered', uid)
                 this.props.history.push("/");
             })
             .catch((error) => {
                 this.setState({ error: error });
             });
-        return fetch('/users/:id', {
+            console.log(`Form Submitted:`);
+            console.log(`uid: ${this.state.uid}`);
+            console.log(`email: ${this.state.email}`);
+            console.log(`name: ${this.state.name}`);
+            console.log(`height: ${this.state.feet}'${this.state.inches}`);
+            console.log(`weight: ${this.state.weight}`);
+            console.log(`age: ${this.state.age}`);
+            console.log(`BodyGoal: ${this.state.bodyGoal}`);
+            alert(`Welcome ${this.state.name}`);
+    
+            const newUser = {
+                uid: this.state.uid,
+                email: this.state.email,
+                name: this.state.name,
+                feet: this.state.feet,
+                inches: this.state.inches,
+                weight: this.state.weight,
+                age: this.state.age,
+                bmi: this.state.bmi,
+                bodyGoal: this.state.bodyGoal
+            };
+    
+            axios.post('/users/add', newUser)
+                .then(res => console.log(res.data),
+                (console.log('New User:', newUser)));
+                
+    
+            this.setState({
+                uid: '',
+                email: '',
+                name: '',
+                feet: '',
+                inches: '',
+                weight: '',
+                age: '',
+                bmi: '',
+                bodyGoal: ''
+            });
+            return fetch('/users/:id', {
             method: 'POST',
             body: JSON.stringify(databody),
             headers: {
                 'Content-Type': 'application/json'
             },
         }).then(res => res.json())
-            .then(data => console.log(data));
-        
-    };
+            .then(data => console.log('user info from fb1', data , 'if useless try' + databody));       
+    }
 
     blur(e) {
         this.calculateBMI();
     }
 
-    calculateBMI = (weight, feet, inches) => {
+    calculateBMI (weight, feet, inches) {
         let kg = weight * 0.45;
         let m = ((feet * 12) + inches) * 0.025;
         return (kg / Math.pow(m,2)).toFixed(1);
@@ -226,7 +235,7 @@ export default class Register extends Component {
    */
 
     render() {
-        const { id, email, password, name, weight, feet, inches, age, bodyGoal, error } = this.state;
+        const { uid, email, password, name, weight, feet, inches, age, bodyGoal, bmi, error } = this.state;
         return (
             <div class="container">
                 <div class="card-body registerForm">

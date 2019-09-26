@@ -3,16 +3,19 @@ import App from "./App";
 import firebase from "./firebase";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-class Auth extends Component{
+export default class Auth extends Component{
     state = {
         authenticated: false,
-        uid: ""
+        uid: ''
       };
       componentDidMount() {
-        console.log(this.state.authenticated);
+        console.log('user?', this.state.authenticated);
+        let uid = this.props.uid;
+        console.log('eureka',uid);
         firebase.auth().onAuthStateChanged((authenticated, ...rest) => {
           authenticated
-            ? this.setState(() => ({
+            ? 
+            this.setState(() => ({
               authenticated: true,
               uid: authenticated.uid
             }))
@@ -27,4 +30,4 @@ class Auth extends Component{
     }
 }
 
-export default Auth;
+//export default Auth;

@@ -20,7 +20,9 @@ import Nav from 'react-bootstrap/Nav';
 
 class App extends Component {
     render() {
-      console.log(this.props);
+      console.log('oh?', this.props);
+      const uid = this.props.uid;
+      console.log('aye', uid);
         return (
             <Router>
                 <div>
@@ -32,7 +34,7 @@ class App extends Component {
                             <Navbar >
                               <Navbar.Brand href="/">MissionSlimPossible</Navbar.Brand>
                               <Nav className="mr-auto">
-                                <NavLink to={`/profile/${this.props.uid}`}>Profile</NavLink>
+                                <NavLink to={`/profile/${uid}`}>Profile</NavLink>
                                 <NavLink to="/workouts">Workouts </NavLink>
                                 <NavLink to="/nutrition">Nutrition </NavLink>
 

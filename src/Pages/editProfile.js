@@ -158,7 +158,7 @@ export default class EditProfile extends Component {
                         </select>
                         <button type="submit" class="btn btn-primary" children="Register" value="Update DB">Submit</button>
                     </form>
-                    <Link to="/">← Back to Log In Page</Link>
+                    <Link to="/">← Back to Home Page</Link>
                 </div>
             </div>
         )

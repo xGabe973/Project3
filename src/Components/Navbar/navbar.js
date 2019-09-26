@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-function Navbar() {
+function Navbar(props) {
     return (
         <nav className-="navbar navbar-expand-lg navbar-light bg-light">
             <Link className="navbar-brand" to="/">
@@ -14,7 +14,7 @@ function Navbar() {
                         <Link
                             to="/"
                             className={
-                                window.location.pathname === "/" || window.location.pathname === "/profile"
+                                window.location.pathname === "/" || window.location.pathname === `/profile/${props.uid}`
                                     ? "nav-link active"
                                     : "nav-link"
                             }

@@ -27,11 +27,36 @@ export default class ProfilePage extends Component {
 
     constructor(props) {
         super(props);
-        console.log(props.match.params.uid);
+        console.log('info2?', props.match.params.email);
         this.state = {
-            user: {},
-            uid: ''
+            user: {
+                uid : props.match.params.uid,
+                name: this.name,
+                email: props.match.params.email,
+                age: this.age,
+                feet: this.feet,
+                inches: this.inches,
+                weight: this.weight,
+                bmi: this.bmi,
+                bodyGoal: this.bodyGoal,
+            },
+
+            
         };
+        console.log('hmm', this.state);
+    };
+
+    state = {
+        uid: '',
+        email: "",
+        password: "",
+        name: "",
+        weight: "",
+        feet: "",
+        inches: "",
+        age: "",
+        bodyGoal: "",
+        error: null
     };
 
     componentDidMount() {
@@ -62,23 +87,25 @@ export default class ProfilePage extends Component {
    //     });
    // }
     render() {
+        
+        const { uid, email, password, name, weight, feet, inches, age, bodyGoal, bmi, error } = this.state;
         return (
          
             
             
-              <div> 
+              <div>
                 <Card  style={colorName} className="nameBox">
-                     <Card.Body  >Hi, {this.User} !</Card.Body>
+                     <Card.Body  >Hi, {this.state.uid} !</Card.Body>
                 </Card>
                 
                 <Card className="statsBox">
                  <Card.Header style={colorHeader} className="cardHeader">Stats</Card.Header>
                  <Card.Body style={cardColor}>
                      <Card.Text>
-                     Weight: {this.props.weight} <br />
-                     Height: {this.props.feet}'{this.props.inches} <br />
-                     BMI: {this.props.bmi} <br />
-                     Age: {this.props.age}
+                     Weight: {weight} <br />
+                     Height: {this.state.feet}'{this.props.inches} <br />
+                     BMI: {bmi} <br />
+                     Age: {User.age}
                      </Card.Text>
                  </Card.Body>
             </Card>
