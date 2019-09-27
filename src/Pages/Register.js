@@ -83,6 +83,9 @@ import firebase from "../firebase";
 import axios from 'axios';
 import { isEqual, isNull, keys, pickBy } from 'lodash';
 
+const btnColor = {backgroundColor: '#C38D9E'};
+
+
 export default class Register extends Component {
 
     constructor(props) {
@@ -350,7 +353,8 @@ export default class Register extends Component {
                             <option value="Maintain">Maintain (Stay at Current Weight)</option>
                             <option value="Bulk">Bulk (Build Muscle)</option>
                         </select>
-                        <button type="submit" class="btn btn-primary" children="Register" value="Add to DB">Submit</button>
+                        <br />
+                        <button type="submit" style={btnColor} class="btn regSubmit" children="Register" value="Add to DB">Submit</button>
                     </form>
                     <br>
                     </br>
