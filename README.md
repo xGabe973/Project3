@@ -16,7 +16,7 @@ This app is SlimPossible! And was designed for everyone in mind and those who wa
 
 
 ![welcome3](https://github.com/xGabe973/Project3/blob/luke2/src/asset/ReadMeimages/nutrition.PNG)
-<b>The Nutrition page is where the user can select up to ten of their favorite recipes using the Recipe Puppy API database.  Nearly every recipe you can think of is listed here and the recipe information will be revealed clicking on the recipe name. Choose ten of your favorite recipes for saving later. Hint:  Choose a tag like "healthy" or "vegetarian" to narrow down searches even more depending on your nutritional needs.</b>
+<b>The Nutrition page is where the user can select up to ten of their favorite recipes using the Recipe Puppy API database.  Nearly every recipe you can think of is listed here and the recipe information will be revealed clicking on the recipe name. Choose ten of your favorite recipes for saving later. Hint:  Choose a tag like "healthy" or "vegetarian" to narrow down searches even more depending on your nutritional needs.  The user can also plug a number in "Seach by Carbs" and it will return recipes that stay below that number.</b>
 
 
 ![welcome2](https://github.com/xGabe973/Project3/blob/luke2/src/asset/ReadMeimages/profile.PNG)
