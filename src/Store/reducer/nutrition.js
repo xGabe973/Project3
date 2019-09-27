@@ -11,7 +11,7 @@ const initialState = {
   selected: getSelectedFromlocalStorage ? getSelectedFromlocalStorage : []
 };
 
-//TODO: this is main reducer.
+// this is main reducer.
 const nutritionReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case actionTypes.INIT_NUTRITION:
@@ -41,7 +41,7 @@ const clearSelectedNutrition = (state, payload) => {
   });
 };
 
-/*--- CASES ARE HERE DEFINED */
+/* defined cases */
 
 // Case createPost
 const initNutrition = (state, payload) => {

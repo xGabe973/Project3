@@ -1,4 +1,4 @@
-/* HERE WE EXPORT ALL ACTION  */
+/* export action */
 
 export {
   initWorkoutAsync,
@@ -11,5 +11,6 @@ export {
   initNutritionAsync,
   selectedNutrition,
   deselectedNutrition,
-  clearSelectedNutrition
+  clearSelectedNutrition,
+  initNutritionByCarbsAsync 
 } from "./nutrition";
