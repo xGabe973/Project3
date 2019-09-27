@@ -49,6 +49,7 @@ export const initNutritionAsync = params => {
             ...obj
           };
         });
+        console.log(dataWithId);
         dispatch(nutritionSuccess(dataWithId));
       })
       .catch(err => {
@@ -76,5 +77,85 @@ export const deselectedNutrition = id => {
 export const clearSelectedNutrition = () => {
   return {
     type: actionTypes.CLEAR_SELECTED_NUTRITION
+  };
+};
+export const initNutritionByCarbsAsync = params => {
+  const query = params ? params.carbs : 50;
+  return (dispatch, getState) => {
+    //a sync calls
+    dispatch(initNutrition());
+    axios({
+      method: "GET",
+      url: "https://api.spoonacular.com/recipes/findByNutrients",
+      params: {
+        number: 10,
+        minCarbs: 1,
+        maxCarbs: query,
+        apiKey: "e7d27452ffa24e75a1c93fefe7740b15"
+      }
+    })
+      .then(({ data: arrayData }) => {
+        console.log("arrayData");
+        const listIds = arrayData.map(({ id }) => id).join(",");
+
+        axios({
+          method: "GET",
+          url: "https://api.spoonacular.com/recipes/informationBulk",
+          params: {
+            includeNutrition: false,
+            ids: listIds,
+            apiKey: "e7d27452ffa24e75a1c93fefe7740b15"
+          }
+        })
+          .then(({ data }) => {
+            const dataWithInfo = data.map(
+              ({ id: mId, image, sourceUrl, title }) => {
+                const currentObj = arrayData.find(({ id }) => id == mId);
+                const newObj = { ...currentObj, image, sourceUrl };
+                return newObj;
+              }
+            );
+            // making the objects of carbs api with all info with previous one
+            const recipeWithAllInfo = dataWithInfo.map(
+              ({
+                id,
+                title,
+                image,
+                sourceUrl: href,
+                protein,
+                fat,
+                carbs,
+                calories
+              }) => {
+                const objForDisc = {
+                  calories,
+                  carbs,
+                  fat,
+                  protein
+                };
+                const disc = Object.entries(objForDisc)
+                  .map(objArr => objArr.join(":"))
+                  .join(", ");
+                return {
+                  id,
+                  title,
+                  href,
+                  ingredients: disc,
+                  thumbnail: image
+                };
+              }
+            );
+            // end
+
+            console.log(recipeWithAllInfo);
+            dispatch(nutritionSuccess(recipeWithAllInfo));
+          })
+          .catch(error => {
+            dispatch(nutritionFail(error));
+          });
+      })
+      .catch(err => {
+        dispatch(nutritionFail(err));
+      });
   };
 };

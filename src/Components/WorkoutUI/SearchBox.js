@@ -42,6 +42,9 @@ class SearchBoxComp extends React.Component {
 
   saveInputRef = input => (this.input = input);
 
+  handleSearchByCarbs = value => {
+    this.props.searchByCarbs({ carbs: value });
+  };
   handleSearch = query => {
     const obj = {
       i: this.state.tags.join(","),
@@ -53,8 +56,18 @@ class SearchBoxComp extends React.Component {
     const { tags, inputVisible, inputValue } = this.state;
     return (
       <div className="search-bar-wrapper">
-        <h3>Search Your Favorite Recipe</h3>
+        <h3 style={{ textAlign: "center" }}>Search Your Favorite Recipe</h3>
         <div>
+          <Search
+            placeholder="Search By Carbs"
+            icon="search"
+            enterButton="by Carbs"
+            size="large"
+            onSearch={this.handleSearchByCarbs}
+          />
+        </div>
+        <div>
+          <h4 style={{ textAlign: "center" }}>OR</h4>
           <Search
             placeholder="Search Your Favorite Recipe"
             enterButton="Search"
@@ -113,7 +126,9 @@ class SearchBoxComp extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSubmitSearch: data => dispatch(actionCreator.initNutritionAsync(data))
+    onSubmitSearch: data => dispatch(actionCreator.initNutritionAsync(data)),
+    searchByCarbs: data =>
+      dispatch(actionCreator.initNutritionByCarbsAsync(data))
   };
 };
 export default connect(
