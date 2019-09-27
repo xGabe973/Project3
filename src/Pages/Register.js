@@ -334,7 +334,7 @@ export default class Register extends Component {
                         </div>
                         <div class="form-group">
                             <label htmlFor="exampleInputWeight1">Weight</label>
-                            <input type="integer" name="weight" class="form-control" id="exampleInputWeight1" placeholder="in kilograms" value={weight} onChange={this.handleInputChange} onBlur={this.blur} required />
+                            <input type="integer" name="weight" class="form-control" id="exampleInputWeight1" placeholder="in pounds" value={weight} onChange={this.handleInputChange} onBlur={this.blur} required />
                         </div>
                         <div class="form-group">
                             <label htmlFor="exampleInputheight1">Height</label>
