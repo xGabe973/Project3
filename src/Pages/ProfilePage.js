@@ -95,7 +95,7 @@ export default class ProfilePage extends Component {
                  <Card.Body style={cardColor}>
                      <Card.Text>
                      Weight: {weight} <br />
-                     Height: {this.state.feet}'{this.props.inches} <br />
+                     Height: {this.state.feet}{this.props.inches} <br />
                      BMI: {bmi} <br />
                      Age: {User.age}
                      </Card.Text>
