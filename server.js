@@ -10,6 +10,58 @@ let User = require('./models/user');
 
 // app.use(proxy('/api/*', { target: 'http://localhost:4000' }));
 
+let User = mongoose.model('User', new mongoose.Schema({
+    uid: { type: Number },
+    name: { type: String, required: true },
+    email: {
+      fbuser: 'email', 
+      type: String, 
+       required: true },
+    age: { type: Number, required: true },
+    feet: { type: Number, required: true },
+    inches: {type: Number, required: true },
+    weight: { type: Number, required: true },
+    bmi: { type: Number },
+    bodyGoal: { type: String, required: true } 
+  })
+  );
+  let Fbuser = mongoose.model('Fbuser', new mongoose.Schema({
+    uid: {type: String, required: true},  
+    email: {type: String, required: true}
+  }))
+
+  async function CreateFbuser(uid, email) {
+     let fbuser = new Fbuser({
+         uid,
+         email
+     })
+     let result = await fbuser.save();
+     console.log('fbuser', result); 
+  }
+  async function createUser(
+      name, fbUser, age, feet, inches, weight, bmi, bodyGoal) {
+          let user = new User({
+              name,
+              fbUser: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'FbUser'
+              },
+              age,
+              feet,
+              inches,
+              weight,
+              bmi,
+              bodyGoal
+          })
+          let result = await user.save();
+          console.log('user result');
+      };
+      async function showUsers() {
+          let users = await User.find().populate('fbUser', 'email').select('name fbUser');
+          console.log(users);
+      }
+showUsers();
+        
 // Define middleware here
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
