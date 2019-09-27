@@ -59,9 +59,9 @@ class SearchBoxComp extends React.Component {
         <h3 style={{ textAlign: "center" }}>Search Your Favorite Recipe</h3>
         <div>
           <Search
-            placeholder="Search By Carbs"
+            placeholder="Search By Calories"
             icon="search"
-            enterButton="by Carbs"
+            enterButton="by Calories"
             size="large"
             onSearch={this.handleSearchByCarbs}
           />
