@@ -22,7 +22,7 @@ export const initNutritionAsync = params => {
   const ings = params ? params.i : " ";
   const query = params ? params.q : " ";
   return (dispatch, getState) => {
-    //TODO# HERE MAKE ASYNC CALLS.
+    // Async calls
     dispatch(initNutrition());
     axios({
       method: "GET",
@@ -89,9 +89,9 @@ export const initNutritionByCarbsAsync = params => {
       url: "https://api.spoonacular.com/recipes/findByNutrients",
       params: {
         number: 10,
-        minCarbs: 1,
-        maxCarbs: query,
-        apiKey: "e7d27452ffa24e75a1c93fefe7740b15"
+        minCalories: 1,
+        maxCalories: query,
+        apiKey: "52a5f0f86060484d93a1d81050e43e43"
       }
     })
       .then(({ data: arrayData }) => {
@@ -104,7 +104,7 @@ export const initNutritionByCarbsAsync = params => {
           params: {
             includeNutrition: false,
             ids: listIds,
-            apiKey: "e7d27452ffa24e75a1c93fefe7740b15"
+            apiKey: "52a5f0f86060484d93a1d81050e43e43"
           }
         })
           .then(({ data }) => {
