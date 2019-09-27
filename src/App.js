@@ -14,10 +14,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Favorites from  "./Components/WorkoutUI/favorites";
+import EditProfile from "./Pages/editProfile"
 
 
 class App extends Component {
     render() {
+      console.log('oh?', this.props);
+      const uid = this.props.uid;
+      console.log('aye', uid);
         return (
             <Router>
                 <div>
@@ -27,7 +31,7 @@ class App extends Component {
                             <Navbar >
                               <Navbar.Brand href="/">MissionSlimPossible</Navbar.Brand>
                               <Nav className="mr-auto">
-                                <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
+                                <Nav.Link as={Link} to={`/profile/${uid}`}>Profile</Nav.Link>
                                 <Nav.Link as={Link} to="/workouts">Workouts </Nav.Link>
                                 <Nav.Link as={Link} to="/nutrition">Nutrition </Nav.Link>
                                 <Favorites />
@@ -54,7 +58,7 @@ class App extends Component {
                             <ProtectedRoute authenticated={this.props.authenticated} path="/nutrition" component={nutrition} />
                             <ProtectedRoute authenticated={this.props.authenticated} path="/workouts" component={workouts} />
                             <ProtectedRoute authenticated={this.props.authenticated} path="/profile" component={ProfilePage} />
-                               
+                            <ProtectedRoute authenticated={this.props.authenticated} path="/edit" component={EditProfile} /> 
                         </Switch>
                     </Wrapper>
                 </div>
