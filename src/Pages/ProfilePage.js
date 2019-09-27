@@ -116,7 +116,7 @@ export default class ProfilePage extends Component {
                  <Card.Header style={colorHeader} className="cardHeader">Nutrition</Card.Header>
                  <Card.Body style={cardColor}>
                      <Card.Text>
-                    dsf
+                    
                      </Card.Text>
                  </Card.Body>
                  </Card>
@@ -127,7 +127,7 @@ export default class ProfilePage extends Component {
                  <Card.Header style={colorHeader} className="cardHeader">Workouts</Card.Header>
                  <Card.Body style={cardColor}>
                      <Card.Text>
-                        fsfdfgsfsdf
+                        
                      </Card.Text>
                  </Card.Body>
                  </Card>
