@@ -74,6 +74,8 @@ import { withRouter } from "react-router-dom";
 import firebase from "../firebase";
 
 
+const btnColor = {backgroundColor: '#E8A87C'};
+
 
 class LogInPage extends Component{
 
@@ -126,7 +128,7 @@ state = {
 
                   </div>
                   
-                  <button type="submit" class="btn btn-primary" children="Log In">Log In</button>
+                  <button type="submit" style={btnColor} class="btn" children="Log In">Log In</button>
               </form>
           </div>
           {/*<Link to="/">← HOME </Link>*/}
