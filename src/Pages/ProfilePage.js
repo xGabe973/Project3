@@ -24,13 +24,14 @@ const User = props => (
 export default class ProfilePage extends Component {
     constructor(props) {
         super(props);
-        console.log('info2?', props.match.params.email);
+        console.log('info2?', props);
         this.state = {
             user: {
                 uid : props.match.params.uid,
-                name: this.name,
+                id: this.state.id,
+                name: props.match.params.name,
                 email: props.match.params.email,
-                age: this.age,
+                age: props.age,
                 feet: this.feet,
                 inches: this.inches,
                 weight: this.weight,
@@ -54,7 +55,7 @@ export default class ProfilePage extends Component {
         error: null
     };
     componentDidMount() {
-        axios.get('/users/')
+        axios.get('/api/users/')
         .then(response => {
             const user = response.data.find((user) => user.uid === this.props.match.params.uid) ||
             {
@@ -80,24 +81,25 @@ export default class ProfilePage extends Component {
    // }
     render() {
         
-        const { uid, email, password, name, weight, feet, inches, age, bodyGoal, bmi, error } = this.state;
+        const { user, error } = this.state;
         return (
          
             
             
               <div>
                 <Card  style={colorName} className="nameBox">
-                     <Card.Body  >Hi, {this.state.uid} !</Card.Body>
+                     <Card.Body  >Hi, {user.name} !</Card.Body>
                 </Card>
                 
                 <Card className="statsBox">
                  <Card.Header style={colorHeader} className="cardHeader">Stats</Card.Header>
                  <Card.Body style={cardColor}>
                      <Card.Text>
-                     Weight: {weight} <br />
-                     Height: {this.state.feet}{this.props.inches} <br />
-                     BMI: {bmi} <br />
-                     Age: {User.age}
+                     Weight: {user.weight} <br />
+                     Height: {user.feet}'{user.inches}" <br />
+                     BMI: {} <br />
+                     Age: {user.age}
+
                      </Card.Text>
                  </Card.Body>
             </Card>

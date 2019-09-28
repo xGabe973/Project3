@@ -31,6 +31,7 @@ class App extends Component {
                             <Navbar >
                               <Navbar.Brand href="/">MissionSlimPossible</Navbar.Brand>
                               <Nav className="mr-auto">
+
                                 <Nav.Link as={Link} to={`/profile/${uid}`}>Profile</Nav.Link>
                                 <Nav.Link as={Link} to="/workouts">Workouts </Nav.Link>
                                 <Nav.Link as={Link} to="/nutrition">Nutrition </Nav.Link>
