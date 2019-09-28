@@ -132,7 +132,7 @@ export default class ProfilePage extends Component {
                  </Card.Body>
                  </Card>
                  <br></br>
-                 <Link className="editLink" to="/edit"> Edit your Profile Stats</Link>
+                 <Link className="editLink" to="/edit"> ←Edit your Profile Stats</Link>
                 
                  {/* <br></br>
 
