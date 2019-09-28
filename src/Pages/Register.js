@@ -19,12 +19,13 @@ export default class Register extends Component {
         this.state = {
             uid: '',
             email: '',
+            password: '',
             name: '',
             weight: '',
             feet: '',
             inches: '',
             age: '',
-            bmi: '',
+           // bmi: '',
             bodyGoal: ''
         }
     }
@@ -39,7 +40,7 @@ export default class Register extends Component {
         inches: "",
         age: "",
         bodyGoal: "",
-        bmi: '',
+        //bmi: '',
         error: null
     };
 
@@ -84,18 +85,19 @@ export default class Register extends Component {
             alert(`Welcome ${this.state.name}`);
     
             const newUser = {
-                uid: this.state.uid,
+                uid: uid,
                 email: this.state.email,
                 name: this.state.name,
+                password: this.state.password,
                 feet: this.state.feet,
                 inches: this.state.inches,
                 weight: this.state.weight,
                 age: this.state.age,
-                bmi: this.state.bmi,
+                //bmi: this.state.bmi,
                 bodyGoal: this.state.bodyGoal
             };
     
-            axios.post('/users/add', newUser)
+            axios.post('/api/users', newUser)
                 .then(res => console.log(res.data),
                 (console.log('New User:', newUser)));
                 
@@ -103,12 +105,13 @@ export default class Register extends Component {
             this.setState({
                 uid: '',
                 email: '',
+                password: '',
                 name: '',
                 feet: '',
                 inches: '',
                 weight: '',
                 age: '',
-                bmi: '',
+                //bmi: '',
                 bodyGoal: ''
             });
             return fetch('/users/:id', {
@@ -302,6 +305,7 @@ export default class Register extends Component {
 
 
             {/*<Link to="/">← Back to Log In Page</Link>*/}
+        </div>
         </div>
 
         );

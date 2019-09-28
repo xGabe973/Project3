@@ -23,6 +23,7 @@ router.post('/', async (req, res) => {
         return res.status(400).send("That user already exists!");   
     } else {
          user = new User({
+             uid: req.body.uid,
              name: req.body.name,
              email: req.body.email,
              password: req.body.password,
@@ -32,11 +33,11 @@ router.post('/', async (req, res) => {
              weight: req.body.weight,
              bodyGoal: req.body.bodyGoal
          });
-        user = new User(_.pick(req.body, ['name', 'email', 'password', 'age', 'feet', 'inches', 'weight', 'bodyGoal']));
+        user = new User(_.pick(req.body, ['uid', 'name', 'email', 'password', 'age', 'feet', 'inches', 'weight', 'bodyGoal']));
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(user.password, salt);
         await user.save();
-        res.send(_.pick("created a new user",user, ['_id', 'name', 'email', 'age', 'feet', 'inches', 'weight', 'bodyGoal']));
+        res.send(_.pick("created a new user",user, ['_id', 'uid', 'name', 'email', 'age', 'feet', 'inches', 'weight', 'bodyGoal']));
     }
 });
 
@@ -76,7 +77,6 @@ router.post('/update/:id', async (req, res) => {
         });
     });
 });
-
 
 
 module.exports = router;

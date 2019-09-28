@@ -3,7 +3,8 @@ const Joi = require('joi');
 const jwt = require('jsonwebtoken');
 const Schema = mongoose.Schema;
 
-const User = mongoose.model('User', new mongoose.Schema({ 
+const User = mongoose.model('User', new mongoose.Schema({
+  uid: { type: String},
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: {type: String, required: true, minlength: 6, unique: true },
@@ -18,6 +19,7 @@ const User = mongoose.model('User', new mongoose.Schema({
 
 function validateUser(user) {
   const schema = {
+    uid: Joi.string(),
     name: Joi.string().min(1).required(),
     email: Joi.string().min(6).required(),
     password: Joi.string().min(6).required(),
