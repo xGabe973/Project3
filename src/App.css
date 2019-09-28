@@ -212,7 +212,13 @@ margin-top: -190px;
   /* width: 20px; */
 }
 
-/* .card-custom {
-  width: 65px;
+.ant-list-item-meta-description {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* a:link {
+  color: #E8A87C;
 } */
 
