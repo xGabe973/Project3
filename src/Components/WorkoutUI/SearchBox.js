@@ -5,6 +5,9 @@ import * as actionCreator from "../../Store/action/index";
 import { Tag, Input, Tooltip, Icon, Typography } from "antd";
 const { Search } = Input;
 const { Text } = Typography;
+
+
+
 class SearchBoxComp extends React.Component {
   state = {
     tags: [" "],
@@ -42,6 +45,9 @@ class SearchBoxComp extends React.Component {
 
   saveInputRef = input => (this.input = input);
 
+  handleSearchByCarbs = value => {
+    this.props.searchByCarbs({ carbs: value });
+  };
   handleSearch = query => {
     const obj = {
       i: this.state.tags.join(","),
@@ -53,18 +59,13 @@ class SearchBoxComp extends React.Component {
     const { tags, inputVisible, inputValue } = this.state;
     return (
       <div className="search-bar-wrapper">
-        <h3>Search Your Favorite Recipe</h3>
+
+        
+        <h1 style={{ textAlign: "center", backgroundColor: '#C38D9E', margin: '0 auto' }}>Search Your Favorite Recipe</h1>
         <div>
-          <Search
-            placeholder="Search Your Favorite Recipe"
-            enterButton="Search"
-            size="large"
-            onSearch={this.handleSearch}
-          />
-        </div>
-        <div>
-          <div style={{ fontSize: "20px", backgroundColor: "white", margin: "8px" }}>
-            <Text type="warning">Add Ingredients by tag</Text>
+        {/* <div>
+          <div style={{ fontSize: "24px", backgroundColor: "white", margin: "8px", textAlign: "center" }}>
+            <Text type="warning">Add Ingredients by tag below. <br /> Then search by calorie amount or recipe.</Text>
           </div>
           {tags.map((tag, index) => {
             const isLongTag = tag.length > 20;
@@ -105,7 +106,25 @@ class SearchBoxComp extends React.Component {
               <Icon type="plus" /> New Tag
             </Tag>
           )}
+        </div> */}
+          <Search
+            placeholder="Search By Calories"
+            icon="search"
+            enterButton="by Calories"
+            size="large"
+            onSearch={this.handleSearchByCarbs}
+          />
         </div>
+        <div>
+          <h4 style={{ textAlign: "center" }}>OR</h4>
+          <Search
+            placeholder="Search Your Favorite Recipe"
+            enterButton="Search"
+            size="large"
+            onSearch={this.handleSearch}
+          />
+        </div>
+    
       </div>
     );
   }
@@ -113,7 +132,9 @@ class SearchBoxComp extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onSubmitSearch: data => dispatch(actionCreator.initNutritionAsync(data))
+    onSubmitSearch: data => dispatch(actionCreator.initNutritionAsync(data)),
+    searchByCarbs: data =>
+      dispatch(actionCreator.initNutritionByCarbsAsync(data))
   };
 };
 export default connect(

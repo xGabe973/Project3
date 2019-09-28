@@ -4,6 +4,9 @@ import axios from 'axios';
 import { isEqual, isNull, keys, pickBy } from 'lodash';
 //import renderEmpty from "antd/lib/config-provider/renderEmpty";
 
+const btnColor = {backgroundColor: '#C38D9E', margin: '10px'};
+
+
 export default class EditProfile extends Component {
     
     constructor(props) {
@@ -156,7 +159,8 @@ export default class EditProfile extends Component {
                             <option value="Maintain">Maintain (Stay at Current Weight)</option>
                             <option value="Bulk">Bulk (Build Muscle)</option>
                         </select>
-                        <button type="submit" class="btn btn-primary" children="Register" value="Update DB">Submit</button>
+                        <br />
+                        <button type="submit" style={btnColor} class="btn btn-primary" children="Register" value="Update DB">Submit</button>
                     </form>
                     <Link to="/">← Back to Home Page</Link>
                 </div>
