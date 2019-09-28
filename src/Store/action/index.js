@@ -11,5 +11,6 @@ export {
   initNutritionAsync,
   selectedNutrition,
   deselectedNutrition,
-  clearSelectedNutrition
+  clearSelectedNutrition,
+  initNutritionByCarbsAsync 
 } from "./nutrition";

@@ -116,7 +116,7 @@ export default class ProfilePage extends Component {
                  <Card.Header style={colorHeader} className="cardHeader">Diet</Card.Header>
                  <Card.Body style={cardColor}>
                      <Card.Text>
-                     You chose to: {}
+                     You chose to: {user.bodyGoal}
                      </Card.Text>
                  </Card.Body>
                  </Card>
@@ -125,7 +125,7 @@ export default class ProfilePage extends Component {
                  <Card.Header style={colorHeader} className="cardHeader">Nutrition</Card.Header>
                  <Card.Body style={cardColor}>
                      <Card.Text>
-                    dsf
+                    Display Nutrition Favorites
                      </Card.Text>
                  </Card.Body>
                  </Card>
@@ -136,7 +136,7 @@ export default class ProfilePage extends Component {
                  <Card.Header style={colorHeader} className="cardHeader">Workouts</Card.Header>
                  <Card.Body style={cardColor}>
                      <Card.Text>
-                        fsfdfgsfsdf
+                        Display Favorite Workouts
                      </Card.Text>
                  </Card.Body>
                  </Card>
