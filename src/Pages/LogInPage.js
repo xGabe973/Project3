@@ -73,13 +73,8 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import firebase from "../firebase";
 
-import ProtectedRoute from '../ProtectedRoute';
-import axios from 'axios';
-
-
 
 const btnColor = {backgroundColor: '#41B3A3'};
-
 
 
 class LogInPage extends Component{
@@ -110,12 +105,6 @@ state = {
       .catch((error) => {
         this.setState({ error: error });
       });
-
-      axios.post('/api/auth', this.state)
-                .then(res => console.log(res.data),
-                (console.log('Logged In:', this.state)));
-      axios.get('/api/users')
-
   };
     render() {
       const { email, password, error } = this.state;
