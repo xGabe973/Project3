@@ -58,8 +58,8 @@ router.get('/:id', async(req, res) => {
     });
 });
 
-router.post('/update/:id', async (req, res) => {
-    User.findById(req.params.id, function(err, user) {
+router.post('/update/:uid', async (req, res) => {
+    User.findById(req.params.uid, function(err, user) {
         if (!user)
         res.status(404).send("data is not found");
         else

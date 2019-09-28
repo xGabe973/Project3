@@ -53,27 +53,7 @@ export default class Register extends Component {
         console.log("User info", this.state.uid, this.state.email, this.state.password,
         this.state.name, this.state.feet, this.state.inches, this.state.age,
         this.state.bodyGoal, this.state.bmi);
-        
-        var self = this;
 
-        const { email, password, uid } = this.state;
-            let databody = {
-                "email": this.state.email,
-                'uid': this.state.uid
-            }
-
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(email, password)
-            .then((user) => {
-                console.log('user:', user);
-                let uid = user.user.uid;
-                console.log('uid registered', uid)
-                this.props.history.push("/");
-            })
-            .catch((error) => {
-                this.setState({ error: error });
-            });
             console.log(`Form Submitted:`);
             console.log(`uid: ${this.state.uid}`);
             console.log(`email: ${this.state.email}`);
@@ -83,46 +63,66 @@ export default class Register extends Component {
             console.log(`age: ${this.state.age}`);
             console.log(`BodyGoal: ${this.state.bodyGoal}`);
             alert(`Welcome ${this.state.name}`);
-    
-            const newUser = {
-                uid: uid,
-                email: this.state.email,
-                name: this.state.name,
-                password: this.state.password,
-                feet: this.state.feet,
-                inches: this.state.inches,
-                weight: this.state.weight,
-                age: this.state.age,
-                //bmi: this.state.bmi,
-                bodyGoal: this.state.bodyGoal
-            };
-    
-            axios.post('/api/users', newUser)
-                .then(res => console.log(res.data),
-                (console.log('New User:', newUser)));
+        
+            const { email, password, uid } = this.state;
+           let databody = {
+               "email": this.state.email,
+               'uid': this.state.uid
+           }
+
+                    firebase
+                    .auth()
+                    .createUserWithEmailAndPassword(email, password)
+                    .then((user) => {
+                        console.log('user:', user);
+                        let uid = user.user.uid;
+                        console.log('uid registered', uid)
+                        const newUser = {
+                            uid: uid,
+                            email: this.state.email,
+                            name: this.state.name,
+                            password: this.state.password,
+                            feet: this.state.feet,
+                            inches: this.state.inches,
+                            weight: this.state.weight,
+                            age: this.state.age,
+                            bmi: this.state.bmi,
+                            bodyGoal: this.state.bodyGoal
+                        };
+                        axios.post('/api/users', newUser)
+                            .then(res => console.log('res data', res.data),
+                            (console.log('New User:', newUser)));
+                        this.setState({
+                            uid: '',
+                            email: '',
+                            name: '',
+                            feet: '',
+                            inches: '',
+                            weight: '',
+                            age: '',
+                            bmi: '',
+                            bodyGoal: ''
+                        });
+                        this.props.history.push("/");
+                    })
+                    .catch((error) => {
+                        this.setState({ error: error });
+                    });
+                         
+                   /*
+                    return fetch('/api/users/:id', {
+                        method: 'POST',
+                        body: JSON.stringify(databody),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                    }).then(res => res.json())
+                     */          
                 
-    
-            this.setState({
-                uid: '',
-                email: '',
-                password: '',
-                name: '',
-                feet: '',
-                inches: '',
-                weight: '',
-                age: '',
-                //bmi: '',
-                bodyGoal: ''
-            });
-            return fetch('/users/:id', {
-            method: 'POST',
-            body: JSON.stringify(databody),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        }).then(res => res.json())
-            .then(data => console.log('user info from fb1', data , 'if useless try' + databody));       
-    }
+                        
+            
+         }   
+
 
     blur(e) {
         this.calculateBMI();

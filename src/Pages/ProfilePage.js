@@ -31,6 +31,7 @@ export default class ProfilePage extends Component {
         this.state = {
             user: {
                 uid : props.match.params.uid,
+                id: this.state.id,
                 name: props.match.params.name,
                 email: props.match.params.email,
                 age: props.age,
@@ -62,7 +63,7 @@ export default class ProfilePage extends Component {
     componentDidMount() {
         axios.get('/api/users/')
         .then(response => {
-            const user = response.data.find((user) => user.id === this.props.match.params.id) ||
+            const user = response.data.find((user) => user.uid === this.props.match.params.uid) ||
             {
                 name: 'davidTest',
                 email: 'email@test.com'
