@@ -18,35 +18,29 @@ const User = props => (
     <h1>{props.user.feet}'{props.user.inches}</h1>
     <h1>{props.user.age}</h1>
     <h1>{props.user.bodyGoal}</h1>
-
     <Link to={"/edit/" + props.user._id}>Edit</Link>
-
     </div>
 )
 export default class ProfilePage extends Component {
-
     constructor(props) {
         super(props);
-        console.log('info2?', props);
+        console.log('info2?', props.match.params.email);
         this.state = {
             user: {
                 uid : props.match.params.uid,
-                id: this.state.id,
-                name: props.match.params.name,
+                name: this.name,
                 email: props.match.params.email,
-                age: props.age,
+                age: this.age,
                 feet: this.feet,
                 inches: this.inches,
                 weight: this.weight,
                 bmi: this.bmi,
                 bodyGoal: this.bodyGoal,
             },
-
             
         };
         console.log('hmm', this.state);
     };
-
     state = {
         uid: '',
         email: "",
@@ -59,9 +53,8 @@ export default class ProfilePage extends Component {
         bodyGoal: "",
         error: null
     };
-
     componentDidMount() {
-        axios.get('/api/users/')
+        axios.get('/users/')
         .then(response => {
             const user = response.data.find((user) => user.uid === this.props.match.params.uid) ||
             {
@@ -75,13 +68,11 @@ export default class ProfilePage extends Component {
             console.log(error);
         });
     };
-
    // compileUser() {
         // return this.state.users.map(function(currentUser, i) {
         //     return <User user={currentUser} key={i} />
         // })
    // }
-
     //user() {
       //  return this.state.users.map(function(currentUser, i) {
         //    return <User user={currentUser} key={i} />;
@@ -89,24 +80,24 @@ export default class ProfilePage extends Component {
    // }
     render() {
         
-        const { user, error } = this.state;
+        const { uid, email, password, name, weight, feet, inches, age, bodyGoal, bmi, error } = this.state;
         return (
          
             
             
               <div>
                 <Card  style={colorName} className="nameBox">
-                     <Card.Body  >Hi, {user.name} !</Card.Body>
+                     <Card.Body  >Hi, {this.state.uid} !</Card.Body>
                 </Card>
                 
                 <Card className="statsBox">
                  <Card.Header style={colorHeader} className="cardHeader">Stats</Card.Header>
                  <Card.Body style={cardColor}>
                      <Card.Text>
-                     Weight: {user.weight} <br />
-                     Height: {user.feet}'{user.inches} <br />
-                     BMI: {} <br />
-                     Age: {user.age}
+                     Weight: {weight} <br />
+                     Height: {this.state.feet}{this.props.inches} <br />
+                     BMI: {bmi} <br />
+                     Age: {User.age}
                      </Card.Text>
                  </Card.Body>
             </Card>
@@ -125,7 +116,7 @@ export default class ProfilePage extends Component {
                  <Card.Header style={colorHeader} className="cardHeader">Nutrition</Card.Header>
                  <Card.Body style={cardColor}>
                      <Card.Text>
-                    dsf
+                    
                      </Card.Text>
                  </Card.Body>
                  </Card>
@@ -136,17 +127,17 @@ export default class ProfilePage extends Component {
                  <Card.Header style={colorHeader} className="cardHeader">Workouts</Card.Header>
                  <Card.Body style={cardColor}>
                      <Card.Text>
-                        fsfdfgsfsdf
+                        
                      </Card.Text>
                  </Card.Body>
                  </Card>
                  <br></br>
-                 <Link to="/edit"> Edit your Profile Stats</Link>
+                 <Link className="editLink" to="/edit"> ←Edit your Profile Stats</Link>
                 
-                 <br></br>
+                 {/* <br></br>
 
 
-                 <Link to="/">←Back to log in page</Link>
+                 <Link to="/">←Back to log in page</Link> */}
 
                  <Footer />
                 
