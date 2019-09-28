@@ -134,10 +134,10 @@ export default class ProfilePage extends Component {
                  <br></br>
                  <Link to="/edit"> Edit your Profile Stats</Link>
                 
-                 <br></br>
+                 {/* <br></br>
 
 
-                 <Link to="/">←Back to log in page</Link>
+                 <Link to="/">←Back to log in page</Link> */}
 
                  <Footer />
                 

@@ -207,3 +207,9 @@ margin-top: -190px;
 .ant-input-search-button {
   background-color: #41B3A3;
 }
+
+.anticon-check {
+  color: black;
+  border:solid 2px #41B3A3;
+  text-emphasis: bolder;
+}
