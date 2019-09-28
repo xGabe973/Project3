@@ -15,6 +15,8 @@ class Workouts extends Component {
     this.props.initializeWorkouts();
   }
   render() {
+
+
     const { workouts, selectedWorkouts } = this.props;
     let workoutList = <Spinner />;
 
@@ -40,6 +42,7 @@ class Workouts extends Component {
 
     return (
       <div className="Container-wrapper">
+        <h2 style={{ textAlign: "center", backgroundColor: '#C38D9E', width: '50%', margin: '0 auto' }}>Pick your 10 workout moves for the day!</h2>
         <div className="Container">{workoutList}</div>
         
       </div>

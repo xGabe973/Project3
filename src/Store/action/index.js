@@ -1,4 +1,4 @@
-/* HERE WE EXPORT ALL ACTION  */
+/* export action */
 
 export {
   initWorkoutAsync,

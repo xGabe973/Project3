@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { OmitProps } from 'antd/lib/transfer/renderListBody';
 
 const ProtectedRoute = ({ component: Component, authenticated, ...rest }) => {
   return <Route render={(props) => (authenticated ? <Component {...props} /> : <Redirect to="/" />)} {...rest} />;

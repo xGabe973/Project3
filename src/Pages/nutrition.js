@@ -6,6 +6,10 @@ import NutritionList from "./nutritionList";
 import Spinner from "../Components/WorkoutUI/Spinner/Spinner";
 import SearchBox from "../Components/WorkoutUI/SearchBox";
 
+// const btnColor = {backgroundColor; '#41B3A3'};
+// style={btnColor}
+
+
 class nutrition extends Component {
   state = {
     loading: true

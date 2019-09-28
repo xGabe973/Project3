@@ -4,9 +4,6 @@ import Home from "./Pages/Home";
 import Register from "./Pages/Register";
 import ProtectedRoute from "./ProtectedRoute";
 import LogOut from "./Pages/LogOut";
-
-import EditProfile from "./Pages/editProfile";
-
 import ProfilePage from "./Pages/ProfilePage"
 import LogInPage from "./Pages/LogInPage";
 import nutrition from "./Pages/nutrition";
@@ -17,6 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Favorites from  "./Components/WorkoutUI/favorites";
+import EditProfile from "./Pages/editProfile"
 
 
 class App extends Component {
@@ -33,12 +31,10 @@ class App extends Component {
                             <Navbar >
                               <Navbar.Brand href="/">MissionSlimPossible</Navbar.Brand>
                               <Nav className="mr-auto">
-
                                 <Nav.Link as={Link} to={`/profile/${uid}`}>Profile</Nav.Link>
                                 <Nav.Link as={Link} to="/workouts">Workouts </Nav.Link>
                                 <Nav.Link as={Link} to="/nutrition">Nutrition </Nav.Link>
                                 <Favorites />
-
                                 <LogOut />
                               </Nav>
                             </Navbar> 
@@ -61,10 +57,8 @@ class App extends Component {
                             <Route path="/register" component={Register} />
                             <ProtectedRoute authenticated={this.props.authenticated} path="/nutrition" component={nutrition} />
                             <ProtectedRoute authenticated={this.props.authenticated} path="/workouts" component={workouts} />
-                            <ProtectedRoute authenticated={this.props.authenticated} path="/edit" component={EditProfile} />
-                            <ProtectedRoute authenticated={this.props.authenticated} path="/profile/:uid" component={ProfilePage} />
-
-                               
+                            <ProtectedRoute authenticated={this.props.authenticated} path="/profile" component={ProfilePage} />
+                            <ProtectedRoute authenticated={this.props.authenticated} path="/edit" component={EditProfile} /> 
                         </Switch>
                     </Wrapper>
                 </div>

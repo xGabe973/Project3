@@ -22,7 +22,7 @@ export const initNutritionAsync = params => {
   const ings = params ? params.i : " ";
   const query = params ? params.q : " ";
   return (dispatch, getState) => {
-    //TODO# HERE MAKE ASYNC CALLS.
+    // Async calls
     dispatch(initNutrition());
     axios({
       method: "GET",
@@ -49,6 +49,7 @@ export const initNutritionAsync = params => {
             ...obj
           };
         });
+        console.log(dataWithId);
         dispatch(nutritionSuccess(dataWithId));
       })
       .catch(err => {
@@ -90,7 +91,9 @@ export const initNutritionByCarbsAsync = params => {
         number: 10,
         minCalories: 1,
         maxCalories: query,
+
         apiKey: "c7ea0a26c5af4742afb1a66f36d85023"
+
       }
     })
       .then(({ data: arrayData }) => {
@@ -103,7 +106,9 @@ export const initNutritionByCarbsAsync = params => {
           params: {
             includeNutrition: false,
             ids: listIds,
+
             apiKey: "c7ea0a26c5af4742afb1a66f36d85023"
+
           }
         })
           .then(({ data }) => {

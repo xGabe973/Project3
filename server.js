@@ -3,13 +3,10 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require("mongoose");
-const router = express.Router();
+const userRoutes = express.Router();
 const PORT = process.env.PORT || 4000;
-const Joi = require('joi');
-const auth = require('./routes/auth');
-Joi.onjectId = require('joi-objectid')(Joi);
 // const proxy = require('http-proxy-middleware');
-let users = require('./routes/users');
+let User = require('./models/user');
 
 // app.use(proxy('/api/*', { target: 'http://localhost:4000' }));
 
@@ -26,9 +23,6 @@ app.use(bodyParser.json({
     limit: '50mb',
     parameterLimit: 100000
 }))
-
-app.use('/api/users', users);
-app.use('/api/auth', auth);
 
 //Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -47,7 +41,6 @@ connection.once('open', function() {
     console.log("MongoDB database connection established");
 });
 
-/*
 userRoutes.use(function(req, res, next) {
     console.log('hello');
     next()
@@ -103,7 +96,8 @@ userRoutes.route('/update/:id').post(function(req, res) {
     });
 });
 
-*/
+app.use('/users', userRoutes);
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
