@@ -63,7 +63,7 @@ class SearchBoxComp extends React.Component {
         
         <h1 style={{ textAlign: "center", backgroundColor: '#C38D9E', margin: '0 auto' }}>Search Your Favorite Recipe</h1>
         <div>
-        <div>
+        {/* <div>
           <div style={{ fontSize: "24px", backgroundColor: "white", margin: "8px", textAlign: "center" }}>
             <Text type="warning">Add Ingredients by tag below. <br /> Then search by calorie amount or recipe.</Text>
           </div>
@@ -106,7 +106,7 @@ class SearchBoxComp extends React.Component {
               <Icon type="plus" /> New Tag
             </Tag>
           )}
-        </div>
+        </div> */}
           <Search
             placeholder="Search By Calories"
             icon="search"
