@@ -74,7 +74,7 @@ import { withRouter } from "react-router-dom";
 import firebase from "../firebase";
 
 
-const btnColor = {backgroundColor: '#E8A87C'};
+const btnColor = {backgroundColor: '#C38D9E'};
 
 
 class LogInPage extends Component{
