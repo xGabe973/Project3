@@ -208,21 +208,11 @@ margin-top: -190px;
 
 .anticon-check, i.anticon.anticon-check {
   color: black;
-  border:solid 2px #41B3A3;
-  text-emphasis: bolder;
+  border: solid 1px #41B3A3;
+  /* width: 20px; */
 }
 
-.card-custom {
+/* .card-custom {
   width: 65px;
-}
+} */
 
-.ant-tag {
-  margin-bottom: 25px;
-  font-size: 16px;
-}
-
-.ant-typography {
-/* #41B3A3; */
-text-decoration: underline;
-font-size: 21px;
-}
