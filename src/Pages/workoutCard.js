@@ -35,7 +35,7 @@ const Item = props => {
   } else {
     actions.push(
       <Icon
-        style={{fontSize: "30px", margin: "0px", padding: "12px 0" }}
+        style={{fontSize: "30px", marginLeft: "-20px", padding: "12px 0" }}
         type="check"
         key="check-1"
         onClick={onSelected}
