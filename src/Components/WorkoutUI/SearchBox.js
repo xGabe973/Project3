@@ -5,6 +5,8 @@ import * as actionCreator from "../../Store/action/index";
 import { Tag, Input, Tooltip, Icon, Typography } from "antd";
 const { Search } = Input;
 const { Text } = Typography;
+
+
 class SearchBoxComp extends React.Component {
   state = {
     tags: [" "],
