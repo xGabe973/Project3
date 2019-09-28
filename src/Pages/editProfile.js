@@ -45,7 +45,7 @@ export default class EditProfile extends Component {
     };
 
     componentDidMount() {
-        axios.get('/api/users/' + this.props.match.params.uid)
+        axios.get('http://localhost:4000/users/' + this.props.match.params.id)
             .then(response => {
                 this.setState({
                     name: '',
@@ -84,7 +84,7 @@ export default class EditProfile extends Component {
             bmi: this.state.bmi
         };
         console.log(obj);
-        axios.post('/api/users/update/' + this.props.match.params.uid, obj)
+        axios.post('http://localhost:4000/users/update/' + this.props.match.params.id, obj)
             .then(res => console.log(res.data));
 
         this.props.history.push('/profile');
