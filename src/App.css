@@ -190,22 +190,7 @@ margin-top: -190px;
 
 
 /* workout page */
-
-/* workout page */
-
 /* nutrition page */
-
-/* nutrition page */
-
-
-.Dropdown_dropElement__ORYRK {
-  display: flex;
-  flex-flow: column !important;
-}
-
-
-
-
 .anticon-check, i.anticon.anticon-check {
   color: black;
   border: solid 1px #41B3A3;
@@ -217,8 +202,21 @@ margin-top: -190px;
   font-size: 18px;
   font-weight: bold;
 }
+/* nutrition page */
+/* workout page */
 
-/* a:link {
-  color: #E8A87C;
-} */
+
+.Dropdown_dropElement__ORYRK {
+  display: flex;
+  flex-flow: column !important;
+}
+
+
+.editLink {
+  font-size: 22px;
+  background-color: #41B3A3;
+  color: black;
+  border-radius: 10%;
+}
+
 
