@@ -41,6 +41,7 @@ class SearchBoxComp extends React.Component {
   };
 
   saveInputRef = input => (this.input = input);
+  
   handleSearchByCarbs = value => {
     this.props.searchByCarbs({ carbs: value });
   };

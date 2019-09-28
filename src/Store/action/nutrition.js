@@ -90,7 +90,7 @@ export const initNutritionByCarbsAsync = params => {
         number: 10,
         minCalories: 1,
         maxCalories: query,
-        apiKey: "52a5f0f86060484d93a1d81050e43e43"
+        apiKey: "c7ea0a26c5af4742afb1a66f36d85023"
       }
     })
       .then(({ data: arrayData }) => {
@@ -103,7 +103,7 @@ export const initNutritionByCarbsAsync = params => {
           params: {
             includeNutrition: false,
             ids: listIds,
-            apiKey: "52a5f0f86060484d93a1d81050e43e43"
+            apiKey: "c7ea0a26c5af4742afb1a66f36d85023"
           }
         })
           .then(({ data }) => {
